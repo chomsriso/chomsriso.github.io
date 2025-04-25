@@ -2,6 +2,9 @@ body {
   background-color: #ffffff;
 }
 
-h1 {
+.title {
+  font-family: Lato, Geneva, sans-serif;
+  font-weight: normal;
+  
   color: #000000;
 }

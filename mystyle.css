@@ -2,9 +2,41 @@ body {
   background-color: #ffffff;
 }
 
+#navbar {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: #FFC34C;
+}
+
+#navbar a {
+  margin: auto;
+  display: block;
+  text-align: center;
+  padding: 18px 80px;
+  text-decoration: none;
+  font-family: Lato, Geneva, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  color: #000000;
+}
+
+/*
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
 .title {
   font-family: Lato, Geneva, sans-serif;
   font-weight: normal;
-  
+  font-size: 20px;
   color: #000000;
+  text-decoration: none;
 }
+*/

@@ -5,6 +5,7 @@ body {
 #navbar {
   position: sticky;
   top: 0;
+  margin: 0px;
   overflow: hidden;
   background-color: #FFC34C;
 }

@@ -49,3 +49,17 @@ body {
     justify-content: center;
   	text-align: center;
 }
+
+div.qsign {
+	width: 30px; 
+    font-size: 48px; 
+    font-weight: bold; 
+    color: #A2A2A2;
+}
+
+div.quote {
+	flex-direction: column; 
+    flex-grow: 1; 
+    font-style: italic; 
+    color: #353535;
+}

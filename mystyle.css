@@ -1,9 +1,11 @@
 body {
-  background-color: #ffffff;
-}
+  background-color: white;
+  margin: 0;
+  }
 
 #navbar {
   position: sticky;
+  min-width: 320px;
   top: 0;
   margin: 0px;
   overflow: hidden;
@@ -22,22 +24,28 @@ body {
   color: #000000;
 }
 
-/*
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
+.quote-container {
+	display: flex;
+    justify-content: center;
+  	align-items: center;
+	max-width: 1200px;
+    min-width: 320px;
+    height: 296px;
+    margin: auto;
+    font-family: Lato, Geneva, sans-serif;
+    letter-spacing: -1px;
+    font-size: 40px;
+    background-color: #F9F9F9;
 }
 
-#navbar a.active {
-  background-color: #04AA6D;
-  color: white;
+.quote-container > div {
+	display: flex;
+    align-items: stretch;
+    width: 660px;
 }
 
-.title {
-  font-family: Lato, Geneva, sans-serif;
-  font-weight: normal;
-  font-size: 20px;
-  color: #000000;
-  text-decoration: none;
+.quote-container > div > div {
+	display: flex;
+    justify-content: center;
+  	text-align: center;
 }
-*/

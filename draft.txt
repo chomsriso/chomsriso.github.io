@@ -360,6 +360,14 @@ img.avatar{
         gap: 20px 40px;
     }
     
+    .footer-container {
+    	padding: 30px 0px;
+	}
+    
+    .footer-container .bodytext {
+		margin: 0px;
+    }
+    
 }
 
 @media (min-width: 672px) {

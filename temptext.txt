@@ -4,24 +4,32 @@
     <link rel="stylesheet" href="mystyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
     <style>
-    	body {
-  			background-color: white;
-  			margin: 0;
-            color: #353535;
-    		font-family: Sora, Geneva, sans-serif;
-  		}
+    
+body {
+	background-color: white;
+	margin: 0;
+	color: #353535;
+	font-family: Sora, Geneva, sans-serif;
+}
         
-        .heading {
-            font-family: Lato, Geneva, sans-serif;
-            font-size: 32px;
-            font-style: italic; 
-        }
+.heading {
+	font-family: Lato, Geneva, sans-serif;
+    font-size: 32px;
+    font-style: italic; 
+}
 
-		.bodytext {
-          font-weight: 300; 
-          font-size: 14px;
-          line-height: 150%;
-        }
+.subheading {
+    font-weight: 300; 
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.bodytext {
+    font-weight: 300; 
+    font-size: 15px;
+    line-height: 150%;
+    color: #828282;
+}
 
 #navbar {
   position: sticky;
@@ -43,9 +51,9 @@
   color: #000000;
 }
 
-/* --------- JOURNAL --------- */
+/* --------- Fiction --------- */
 
-.journal-container {
+.fiction-container {
 	display: flex;
 	justify-content: center;
 	max-width: 1120px;
@@ -55,77 +63,91 @@
     gap: 40px;
 }
 
-.journal-container > div {
+.fiction-container > div {
 	display: flex;
+	width: 500px;
 }
 
-.journal-container .leftpanel {
+.fiction-container .leftpanel {
     flex-direction: column;
     gap: 40px;
 }
 
-.journal-container .detail {
-	display: flex;
-    gap: 40px;
+.fiction-container .rightpanel {
+	
+	flex-grow: 1;
 }
 
-.journal-container .desc {
-	display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.journal-container img {
+.fiction-container img {
 	width: 171px;
     align-self: flex-start;
 	object-fit: cover;
+    border-radius: 4px;
 }
 
-.journal-container .bodytext {
+.fiction-container .detail {
+	display: flex;
+    gap: 40px;
+}
+
+.fiction-container .desc {
+	display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.fiction-container .bodytext {
 	font-weight: 400; 
-    color: #828282;
+    font-size: 14px;
 }
 
-.subheading {
-    font-weight: 300; 
-    font-size: 16px;
+.fiction-container .chapterlist {
+	display: flex;
+    flex-direction: column;
+}
+        
+.fiction-container .chapterlist > div {
+	display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.fiction-container .numlist {
+    width: 40px;
+    text-align: center;
+    font-size: 14px;
     line-height: 150%;
 }
 
-@media (max-width: 671px) {
-
-  .journal-container {
-      flex-wrap: wrap;
-      min-width: 300px;
-      margin: 0px auto;
-      padding: 40px 0px 0px 0px;
-  }
-
-  .journal-container > div {
-      flex-shrink: 1;
-  }
-
-  .journal-container .margin {
-      margin: 0px 0px 40px 40px;
-  }
-
-  .journal-container .mark {
-      flex-shrink: 0;
-  }
-
-  .journal-container .image {
-      width: 696px;
-      height: 307px;
-  }
-
+.fiction-container .verline {
+    width: 20px;
+    height: 24px;
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: #D8D8D8;
 }
 
+.fiction-container .chaptername {
+	flex-grow: 1;
+    font-weight: 300; 
+    font-size: 14px;
+    line-height: 150%;
+    background-color: lightgrey;
+}
+
+.linkbox {
+	cursor: pointer;
+}
 
 /* --------- FOOTER --------- */
 
 .footer-container {
-	margin: 50px auto;
+	margin: auto;
+    padding: 50px 0px;
     text-align: center;
+    border-top-style: solid;
+    border-width: 1px;
+    border-color: #E6E6E6;
 }
 
 .footer-container > div {
@@ -184,7 +206,6 @@
     
     img.avatar{
 		width: 106px;
-		aspect-ratio: 1;
     }
     
     .about-container .bodytext {
@@ -192,7 +213,7 @@
     }
     
     .footer-container {
-		margin: 30px auto;
+    	padding: 30px 0px;
 	}
     
     .footer-container .bodytext {
@@ -221,7 +242,7 @@
     }
     
     .footer-container {
-		margin: 30px auto;
+    	padding: 30px 0px;
 	}
     
     .footer-container .bodytext {
@@ -275,13 +296,15 @@
     }
 
 	.footer-container {
-		margin: 50px auto;
+    	padding: 50px 0px;
+	}
+    
+    .footer-container .bodytext {
+		margin: 13px 0px 0px 0px;
 	}
 }
 
-@media (min-width: 992px) {
 
-}
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
@@ -293,11 +316,13 @@
     	background-color: #262626;
     }
     .about-container {
-    	border-color: #383838;
     	background-color: #292929;
 	}
     .about-container .bodytext {
     color: #C9C9C9;
+	}
+    .footer-container {
+    	border-color: #383838;
 	}
 }
 
@@ -310,19 +335,23 @@
     </div>
     
     
-    <div class="journal-container">
+    <div class="fiction-container">
     	<div class="leftpanel">
         	<div class="detail">
             	<img src="https://chomsriso.github.io/src/img_storiesFromAbove.jpeg">
                 <div class="desc">
                 	<div class="heading">Stories From Above</div>
-                	<div class="bodytext">A collection of flash fiction : gods and their slice of life
-
-Meet the unknown gods you've never heard of. Through some of lost scriptures. Their experiences may blow your mind. Their stories may make you questioning your belief.</div>
+                	<div class="bodytext">A collection of flash fiction : gods and their slice of life <br> <br> Meet the unknown gods you've never heard of. Through some of lost scriptures. Their experiences may blow your mind. Their stories may make you questioning your belief.</div>
 				</div>
             </div>
+            <div class="chapterlist">
+            	<div onclick="
+   document.getElementById('frameid').src = 'https://dict.longdo.com/'" class="linkbox"><div class="numlist">1</div><div class="verline"></div><div class="bodytext chaptername">Vatah the Wind God</div></div>
+            	<div><div class="numlist">2</div><div class="verline"></div><div class="bodytext chaptername">Vatah the Wind God</div></div>
+            	<div><div class="numlist">3</div><div class="verline"></div><div class="bodytext chaptername">Vatah the Wind God</div></div>
+            </div>
     	</div>
-    	<div><iframe src=""></iframe></div>
+    	<div class="rightpanel"><iframe id="frameid" src="" style="height:100%;width:100%;border:none;"></iframe></div>
     </div>
 
     
@@ -337,7 +366,7 @@ Meet the unknown gods you've never heard of. Through some of lost scriptures. Th
     </div>
     
     <script>
-    
+
 	</script>
     
   </body>

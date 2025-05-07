@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
+    <style>
+    	body {
+  			background-color: white;
+  			margin: 0;
+            color: #353535;
+    		font-family: Sora, Geneva, sans-serif;
+  		}
+        
+        .heading {
+            font-family: Lato, Geneva, sans-serif;
+            font-size: 32px;
+            font-style: italic; 
+        }
+
+		.bodytext {
+          font-weight: 300; 
+          font-size: 14px;
+          line-height: 150%;
+        }
+
+#navbar {
+  position: sticky;
+  display: flex;
+  justify-content: space-around;
+  min-width: 305px;
+  top: 0;
+  margin: 0px;
+  overflow: hidden;
+  background-color: #FFC34C;
+}
+
+#navbar a {
+  text-align: center;
+  padding: 18px;
+  text-decoration: none;
+  font-family: Lato, Geneva, sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+
+/* --------- JOURNAL --------- */
+
+.journal-container {
+	display: flex;
+	justify-content: center;
+	max-width: 1120px;
+    min-width: 240px;
+    margin: auto;
+    padding: 40px 80px;
+    gap: 40px;
+}
+
+.journal-container > div {
+	display: flex;
+}
+
+.journal-container .leftpanel {
+    flex-direction: column;
+    gap: 40px;
+}
+
+.journal-container .detail {
+	display: flex;
+    gap: 40px;
+}
+
+.journal-container .desc {
+	display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.journal-container img {
+	width: 171px;
+    align-self: flex-start;
+	object-fit: cover;
+}
+
+.journal-container .bodytext {
+	font-weight: 400; 
+    color: #828282;
+}
+
+.subheading {
+    font-weight: 300; 
+    font-size: 16px;
+    line-height: 150%;
+}
+
+@media (max-width: 671px) {
+
+  .journal-container {
+      flex-wrap: wrap;
+      min-width: 300px;
+      margin: 0px auto;
+      padding: 40px 0px 0px 0px;
+  }
+
+  .journal-container > div {
+      flex-shrink: 1;
+  }
+
+  .journal-container .margin {
+      margin: 0px 0px 40px 40px;
+  }
+
+  .journal-container .mark {
+      flex-shrink: 0;
+  }
+
+  .journal-container .image {
+      width: 696px;
+      height: 307px;
+  }
+
+}
+
+
+/* --------- FOOTER --------- */
+
+.footer-container {
+	margin: 50px auto;
+    text-align: center;
+}
+
+.footer-container > div {
+	display: flex;
+    justify-content: center;
+    gap: 8px;
+	margin: auto;
+}
+
+.footer-container > div > a {
+	padding: 8px;
+}
+
+.footer-container .bodytext {
+	margin: 13px 0px 0px 0px;
+    font-weight: 400;
+	font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    
+    .quote-container {
+    	font-size: 34px;
+    }
+    
+    .quote-container > div {
+    	padding: 0px 20px;
+    }
+    
+    div.qsign {
+    	font-size: 40px;
+    }
+    
+    .showcase-container {
+      	padding: 0px 0px 0px 20px;
+    	gap: 32px 11px;
+    }
+    
+    .showcase-container > div > div > div {
+		width: 171px;
+    }
+    
+    .showcase-container > div > div {
+        gap: 11px;
+    }
+    
+    .journal-container .margin {
+		margin: 0px 0px 40px 20px;
+	}
+    
+    .about-container > div {
+    	flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    img.avatar{
+		width: 106px;
+		aspect-ratio: 1;
+    }
+    
+    .about-container .bodytext {
+    	text-align: left;
+    }
+    
+    .footer-container {
+		margin: 30px auto;
+	}
+    
+    .footer-container .bodytext {
+		margin: 0px;
+    }
+    
+}
+
+@media (min-width: 601px) {
+    
+    .quote-container > div {
+    	padding: 0px 40px;
+    }
+    
+    .showcase-container {
+      	padding: 0px 0px 0px 40px;
+    }
+    
+    .journal-container .margin {
+		margin: 0px 0px 40px 40px;
+	}
+    
+    .about-container > div {
+        padding: 40px 40px;
+        gap: 20px 40px;
+    }
+    
+    .footer-container {
+		margin: 30px auto;
+	}
+    
+    .footer-container .bodytext {
+		margin: 0px;
+    }
+    
+}
+
+@media (min-width: 672px) {
+    
+    .quote-container > div {
+    	padding: 0px 40px;
+    }
+    
+    .showcase-container {
+      	padding: 0px 0px 0px 40px;
+    }
+    
+    .journal-container {
+		padding: 40px 0px 40px 40px;
+    }
+    
+    .journal-container .margin {
+		margin: 0px;
+	}
+    
+    .about-container > div {
+        padding: 40px 40px;
+    	gap: 20px 40px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    
+    .quote-container > div {
+    	padding: 0px 80px;
+    }
+    
+    .showcase-container {
+      	padding: 0px 0px 0px 80px;
+    }
+    
+    .journal-container {
+		padding: 40px 0px 40px 80px;
+    }
+    
+    .about-container > div {
+        padding: 40px 80px;
+    	gap: 20px 80px;
+    }
+
+	.footer-container {
+		margin: 50px auto;
+	}
+}
+
+@media (min-width: 992px) {
+
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1F1F1F;
+        color: #C9C9C9;
+    }
+    .quote-container {
+    	background-color: #262626;
+    }
+    .about-container {
+    	border-color: #383838;
+    	background-color: #292929;
+	}
+    .about-container .bodytext {
+    color: #C9C9C9;
+	}
+}
+
+    </style>
+  </head>
+  <body>
+  
+    <div id="navbar">
+		<a href="#top">CHOM SRISO</a>
+    </div>
+    
+    
+    <div class="journal-container">
+    	<div class="leftpanel">
+        	<div class="detail">
+            	<img src="https://chomsriso.github.io/src/img_storiesFromAbove.jpeg">
+                <div class="desc">
+                	<div class="heading">Stories From Above</div>
+                	<div class="bodytext">A collection of flash fiction : gods and their slice of life
+
+Meet the unknown gods you've never heard of. Through some of lost scriptures. Their experiences may blow your mind. Their stories may make you questioning your belief.</div>
+				</div>
+            </div>
+    	</div>
+    	<div><iframe src=""></iframe></div>
+    </div>
+
+    
+    <div class="footer-container">
+    	<div>
+        	<a href="https://www.royalroad.com/profile/661326"><img src="https://chomsriso.github.io/src/icon_roy.png"></a>
+        	<a href="https://dict.longdo.com/"><img src="https://chomsriso.github.io/src/icon_spt.png"></a>
+        	<a href="https://music.youtube.com/channel/UCytUrRFdRxaXbmTushol8-g"><img src="https://chomsriso.github.io/src/icon_you.png"></a>
+        	<a href="https://dict.longdo.com/"><img src="https://chomsriso.github.io/src/icon_ins.png"></a>
+        </div>
+        <div class="bodytext">© 2025 Chom Sriso. All rights reserved.</div>
+    </div>
+    
+    <script>
+    
+	</script>
+    
+  </body>
+</html>

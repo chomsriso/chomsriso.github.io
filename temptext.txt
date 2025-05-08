@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html>
+<script src="https://chomsriso.github.io/js/adddiv.js"></script>
   <head>
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://chomsriso.github.io/css/home.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
     <style>
-    
-body {
-	background-color: white;
-	margin: 0;
-	color: #353535;
-	font-family: Sora, Geneva, sans-serif;
-}
-        
-.heading {
+h1 {
 	font-family: Lato, Geneva, sans-serif;
+	font-weight: 400;
     font-size: 32px;
     font-style: italic; 
+    margin: 0px;
 }
 
-.subheading {
-    font-weight: 300; 
-    font-size: 16px;
-    line-height: 150%;
-}
-
-.bodytext {
-    font-weight: 300; 
-    font-size: 15px;
+h2 {
+	font-weight: 400;
+	font-size: 20px;
     line-height: 150%;
     color: #828282;
+    text-align: center;
+    margin: 0px;
 }
 
-#navbar {
-  position: sticky;
-  display: flex;
-  justify-content: space-around;
-  min-width: 305px;
-  top: 0;
-  margin: 0px;
-  overflow: hidden;
-  background-color: #FFC34C;
+h3 {
+	font-family: Lato, Geneva, sans-serif;
+	font-weight: 400;
+    font-style: italic; 
+	font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    margin: 0px;
 }
 
-#navbar a {
-  text-align: center;
-  padding: 18px;
-  text-decoration: none;
-  font-family: Lato, Geneva, sans-serif;
-  font-size: 20px;
-  color: #000000;
+hr {
+	width: 240px; 
+	height: 1px;
+    border: none;
+    background-color: #E6E6E6;
+    margin: 20px auto 40px auto;
 }
 
+p {
+	font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 0px;
+}
 /* --------- Fiction --------- */
 
 .fiction-container {
@@ -65,16 +60,16 @@ body {
 
 .fiction-container > div {
 	display: flex;
+    flex-direction: column;
 	width: 500px;
 }
 
 .fiction-container .leftpanel {
-    flex-direction: column;
     gap: 40px;
 }
 
 .fiction-container .rightpanel {
-	
+	display: none;
 	flex-grow: 1;
 }
 
@@ -96,9 +91,9 @@ body {
     gap: 40px;
 }
 
-.fiction-container .bodytext {
+.desc p {
 	font-weight: 400; 
-    font-size: 14px;
+    color: #828282;
 }
 
 .fiction-container .chapterlist {
@@ -132,198 +127,41 @@ body {
     font-weight: 300; 
     font-size: 14px;
     line-height: 150%;
-    background-color: lightgrey;
 }
 
 .linkbox {
 	cursor: pointer;
 }
 
-/* --------- FOOTER --------- */
-
-.footer-container {
-	margin: auto;
-    padding: 50px 0px;
-    text-align: center;
-    border-top-style: solid;
-    border-width: 1px;
-    border-color: #E6E6E6;
-}
-
-.footer-container > div {
-	display: flex;
-    justify-content: center;
-    gap: 8px;
-	margin: auto;
-}
-
-.footer-container > div > a {
-	padding: 8px;
-}
-
-.footer-container .bodytext {
-	margin: 13px 0px 0px 0px;
-    font-weight: 400;
-	font-size: 12px;
+.fiction-container .selectedtab {
+	width: 20px;
+	height: 100%;
+    display: none;
+    background-color: #FFC34C;
+    border-radius: 0px 6px 6px 0px;
 }
 
 @media (max-width: 600px) {
-    
-    .quote-container {
-    	font-size: 34px;
-    }
-    
-    .quote-container > div {
-    	padding: 0px 20px;
-    }
-    
-    div.qsign {
-    	font-size: 40px;
-    }
-    
-    .showcase-container {
-      	padding: 0px 0px 0px 20px;
-    	gap: 32px 11px;
-    }
-    
-    .showcase-container > div > div > div {
-		width: 171px;
-    }
-    
-    .showcase-container > div > div {
-        gap: 11px;
-    }
-    
-    .journal-container .margin {
-		margin: 0px 0px 40px 20px;
-	}
-    
-    .about-container > div {
-    	flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-    
-    img.avatar{
-		width: 106px;
-    }
-    
-    .about-container .bodytext {
-    	text-align: left;
-    }
-    
-    .footer-container {
-    	padding: 30px 0px;
-	}
-    
-    .footer-container .bodytext {
-		margin: 0px;
-    }
     
 }
 
 @media (min-width: 601px) {
     
-    .quote-container > div {
-    	padding: 0px 40px;
-    }
-    
-    .showcase-container {
-      	padding: 0px 0px 0px 40px;
-    }
-    
-    .journal-container .margin {
-		margin: 0px 0px 40px 40px;
-	}
-    
-    .about-container > div {
-        padding: 40px 40px;
-        gap: 20px 40px;
-    }
-    
-    .footer-container {
-    	padding: 30px 0px;
-	}
-    
-    .footer-container .bodytext {
-		margin: 0px;
-    }
-    
 }
 
 @media (min-width: 672px) {
-    
-    .quote-container > div {
-    	padding: 0px 40px;
-    }
-    
-    .showcase-container {
-      	padding: 0px 0px 0px 40px;
-    }
-    
-    .journal-container {
-		padding: 40px 0px 40px 40px;
-    }
-    
-    .journal-container .margin {
-		margin: 0px;
-	}
-    
-    .about-container > div {
-        padding: 40px 40px;
-    	gap: 20px 40px;
-    }
 
 }
 
 @media (min-width: 768px) {
-    
-    .quote-container > div {
-    	padding: 0px 80px;
-    }
-    
-    .showcase-container {
-      	padding: 0px 0px 0px 80px;
-    }
-    
-    .journal-container {
-		padding: 40px 0px 40px 80px;
-    }
-    
-    .about-container > div {
-        padding: 40px 80px;
-    	gap: 20px 80px;
-    }
 
-	.footer-container {
-    	padding: 50px 0px;
-	}
-    
-    .footer-container .bodytext {
-		margin: 13px 0px 0px 0px;
-	}
 }
 
 
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1F1F1F;
-        color: #C9C9C9;
-    }
-    .quote-container {
-    	background-color: #262626;
-    }
-    .about-container {
-    	background-color: #292929;
-	}
-    .about-container .bodytext {
-    color: #C9C9C9;
-	}
-    .footer-container {
-    	border-color: #383838;
-	}
+    
 }
 
     </style>
@@ -340,18 +178,53 @@ body {
         	<div class="detail">
             	<img src="https://chomsriso.github.io/src/img_storiesFromAbove.jpeg">
                 <div class="desc">
-                	<div class="heading">Stories From Above</div>
-                	<div class="bodytext">A collection of flash fiction : gods and their slice of life <br> <br> Meet the unknown gods you've never heard of. Through some of lost scriptures. Their experiences may blow your mind. Their stories may make you questioning your belief.</div>
+                	<h1>Stories From Above</h1>
+                	<p>A collection of flash fiction : gods and their slice of life <br> <br> Meet the unknown gods you've never heard of. Through some of lost scriptures. Their experiences may blow your mind. Their stories may make you questioning your belief.</p>
 				</div>
             </div>
             <div class="chapterlist">
-            	<div onclick="
-   document.getElementById('frameid').src = 'https://dict.longdo.com/'" class="linkbox"><div class="numlist">1</div><div class="verline"></div><div class="bodytext chaptername">Vatah the Wind God</div></div>
-            	<div><div class="numlist">2</div><div class="verline"></div><div class="bodytext chaptername">Vatah the Wind God</div></div>
-            	<div><div class="numlist">3</div><div class="verline"></div><div class="bodytext chaptername">Vatah the Wind God</div></div>
+            	<div onclick="select(this, 'ch1');" class="linkbox">
+   					<div class="numlist">1</div>
+   					<div class="verline"></div>
+                	<div class="chaptername">Vatah the Wind God</div>
+                    <div id ="stid" class="selectedtab" style="display:flex;"></div>
+                </div>
+   
+				<div onclick="select(this, 'ch2');" class="linkbox">
+   					<div class="numlist">2</div>
+   					<div class="verline"></div>
+                	<div class="chaptername">Vatah the Wind God</div>
+                    <div id ="stid" class="selectedtab"></div>
+                </div>
+                
+                <div onclick="select(this, 'ch3');" class="linkbox">
+   					<div class="numlist">3</div>
+   					<div class="verline"></div>
+                	<div class="chaptername">Vatah the Wind God</div>
+                    <div id ="stid" class="selectedtab"></div>
+                </div>
+                
+                <div onclick="select(this, 'ch4');" class="linkbox">
+   					<div class="numlist">4</div>
+   					<div class="verline"></div>
+                	<div class="chaptername">Vatah the Wind God</div>
+                    <div id ="stid" class="selectedtab"></div>
+                </div>
+                
             </div>
     	</div>
-    	<div class="rightpanel"><iframe id="frameid" src="" style="height:100%;width:100%;border:none;"></iframe></div>
+        
+    	<div id="ch1" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch1.html">
+        </div>
+        
+        <div id="ch2" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch2.html">
+        </div>
+        
+        <div id="ch3" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch3.html">
+        </div>
+        
+        <div id="ch4" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch4.html">
+        </div>
     </div>
 
     
@@ -366,6 +239,22 @@ body {
     </div>
     
     <script>
+    
+function select(el, panelid) {
+	var tabs = document.getElementsByClassName('selectedtab');
+    for (let i = 0; i < tabs.length; i++) {
+  		tabs[i].style.display = "none";
+	}
+    el.querySelector("#stid").style.display = "flex";
+    
+    var rpanels = document.getElementsByClassName('rightpanel');
+    for (let i = 0; i < rpanels.length; i++) {
+  		rpanels[i].style.display = "none";
+	}
+    document.getElementById(panelid).style.display = "flex";
+}
+
+includeHTML();
 
 	</script>
     

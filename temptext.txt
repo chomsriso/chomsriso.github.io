@@ -193,21 +193,21 @@ p {
 				<div onclick="select(this, 'ch2');" class="linkbox">
    					<div class="numlist">2</div>
    					<div class="verline"></div>
-                	<div class="chaptername">Vatah the Wind God</div>
+                	<div class="chaptername">Ratra and Their Night Time</div>
                     <div id ="stid" class="selectedtab"></div>
                 </div>
                 
                 <div onclick="select(this, 'ch3');" class="linkbox">
    					<div class="numlist">3</div>
    					<div class="verline"></div>
-                	<div class="chaptername">Vatah the Wind God</div>
+                	<div class="chaptername">Nillah the Black Beast</div>
                     <div id ="stid" class="selectedtab"></div>
                 </div>
                 
                 <div onclick="select(this, 'ch4');" class="linkbox">
    					<div class="numlist">4</div>
    					<div class="verline"></div>
-                	<div class="chaptername">Vatah the Wind God</div>
+                	<div class="chaptername">A Librarian and a Hidden Tree</div>
                     <div id ="stid" class="selectedtab"></div>
                 </div>
                 

@@ -169,7 +169,7 @@ p {
   <body>
   
     <div id="navbar">
-		<a href="#top">CHOM SRISO</a>
+		<a href="https://chomsriso.github.io/index.html">CHOM SRISO</a>
     </div>
     
     
@@ -214,7 +214,7 @@ p {
             </div>
     	</div>
         
-    	<div id="ch1" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch1.html">
+    	<div id="ch1" class="rightpanel" style="display:flex;" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch1.html">
         </div>
         
         <div id="ch2" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch2.html">

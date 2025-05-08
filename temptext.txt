@@ -82,13 +82,13 @@ p {
 
 .fiction-container .detail {
 	display: flex;
-    gap: 40px;
+    gap: 0px 40px;
 }
 
 .fiction-container .desc {
 	display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 0px 40px;
 }
 
 .desc p {
@@ -142,7 +142,48 @@ p {
 }
 
 @media (max-width: 600px) {
+    .fiction-container {
+		flex-wrap: wrap;
+        min-width: 320px;
+    	padding: 0px;
+    }
     
+    .fiction-container > div {
+	width: 100%;
+	}
+    .fiction-container .detail {
+		flex-wrap: wrap;
+	}
+    
+    .fiction-container img {
+	width: 100%;
+    height: 307px;
+	object-fit: cover;
+    border-radius: 0px;
+	}
+    
+    h1{
+    	position: sticky;
+        top: 56px;
+        padding: 10px 0px;
+    	text-align: center;
+        background-color: white;
+        border-bottom: 1px solid #E6E6E6;
+    }
+    
+    .desc p {
+    	padding: 20px;
+		font-weight: 400; 
+    	color: #828282;
+        background-color: #F7F7F7;
+	}
+    .fiction-container .chapterlist {
+		display: none;
+	}
+    .fiction-container .chapterdd {
+		display: flex;
+        background-color: white;
+	}
 }
 
 @media (min-width: 601px) {
@@ -161,7 +202,21 @@ p {
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-    
+    .fiction-container .verline {
+    border-color: #383838;
+	}
+    hr {
+    background-color: #383838;
+	}    
+    @media (max-width: 600px) {
+    	.desc p {
+        	background-color: #292929;
+		}
+        h1 {
+        	background-color: #1F1F1F; 
+            border-color:#383838;
+        }
+    }
 }
 
     </style>

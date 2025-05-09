@@ -55,7 +55,7 @@ p {
     min-width: 240px;
     margin: auto;
     padding: 40px 80px;
-    gap: 40px;
+    gap: 0px 40px;
 }
 
 .fiction-container > div {
@@ -65,7 +65,7 @@ p {
 }
 
 .fiction-container .leftpanel {
-    gap: 40px;
+    gap: 0px 40px;
 }
 
 .fiction-container .rightpanel {
@@ -88,7 +88,7 @@ p {
 .fiction-container .desc {
 	display: flex;
     flex-direction: column;
-    gap: 0px 40px;
+    gap: 40px;
 }
 
 .desc p {
@@ -99,6 +99,7 @@ p {
 .fiction-container .chapterlist {
 	display: flex;
     flex-direction: column;
+    padding: 40px 0px;
 }
         
 .fiction-container .chapterlist > div {
@@ -141,6 +142,37 @@ p {
     border-radius: 0px 6px 6px 0px;
 }
 
+.fiction-container .chapterdd {
+	display: none;
+	background-color: white;
+	justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.fiction-container .chapterdd > div{
+	height: 60px;
+	padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fiction-container .chapterdd .ddbody {
+	flex-grow: 1;
+    cursor: pointer;
+}
+    
+#ddblock {
+	display: none;
+}
+
+#ddblock p {
+	background-color: #F7F7F7;
+    padding: 20px;
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
     .fiction-container {
 		flex-wrap: wrap;
@@ -163,13 +195,21 @@ p {
 	}
     
     h1{
+    /*
     	position: sticky;
         top: 56px;
+    */
         padding: 10px 0px;
     	text-align: center;
         background-color: white;
         border-bottom: 1px solid #E6E6E6;
     }
+    
+    .fiction-container .desc {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+	}
     
     .desc p {
     	padding: 20px;
@@ -177,12 +217,21 @@ p {
     	color: #828282;
         background-color: #F7F7F7;
 	}
+    
     .fiction-container .chapterlist {
-		display: none;
+    	display: none;
 	}
+    
     .fiction-container .chapterdd {
 		display: flex;
-        background-color: white;
+	}
+    
+    .rightpanel {
+		padding: 20px 0px;
+	}
+    
+    .rightpanel p {
+		padding: 0px 20px;
 	}
 }
 
@@ -238,34 +287,48 @@ p {
 				</div>
             </div>
             <div class="chapterlist">
-            	<div onclick="select(this, 'ch1');" class="linkbox">
+            	<div onclick="select(this); showpanel('ch1');" class="linkbox">
    					<div class="numlist">1</div>
    					<div class="verline"></div>
                 	<div class="chaptername">Vatah the Wind God</div>
                     <div id ="stid" class="selectedtab" style="display:flex;"></div>
                 </div>
    
-				<div onclick="select(this, 'ch2');" class="linkbox">
+				<div onclick="select(this); showpanel('ch2');" class="linkbox">
    					<div class="numlist">2</div>
    					<div class="verline"></div>
                 	<div class="chaptername">Ratra and Their Night Time</div>
                     <div id ="stid" class="selectedtab"></div>
                 </div>
                 
-                <div onclick="select(this, 'ch3');" class="linkbox">
+                <div onclick="select(this); showpanel('ch3');" class="linkbox">
    					<div class="numlist">3</div>
    					<div class="verline"></div>
                 	<div class="chaptername">Nillah the Black Beast</div>
                     <div id ="stid" class="selectedtab"></div>
                 </div>
                 
-                <div onclick="select(this, 'ch4');" class="linkbox">
+                <div onclick="select(this); showpanel('ch4');" class="linkbox">
    					<div class="numlist">4</div>
    					<div class="verline"></div>
                 	<div class="chaptername">A Librarian and a Hidden Tree</div>
                     <div id ="stid" class="selectedtab"></div>
                 </div>
                 
+            </div>
+            
+            <div class="chapterdd">
+            	<div>&lt;&lt;
+                </div>
+                <p class="ddbody" onclick="showdd()">Chapter</p>
+                <div>&gt;&gt;
+                </div>
+            </div>
+            <div id="ddblock">
+            	<p onclick="showpanel('ch1')">1 - Vatah the Wind God</p>
+            	<p onclick="showpanel('ch2')">2 - Ratra and Their Night Time</p>
+            	<p onclick="showpanel('ch3')">3 - Nillah the Black Beast</p>
+            	<p onclick="showpanel('ch4')">4 - A Librarian and a Hidden Tree</p>
             </div>
     	</div>
         
@@ -295,21 +358,39 @@ p {
     
     <script>
     
-function select(el, panelid) {
+function select(el) {
 	var tabs = document.getElementsByClassName('selectedtab');
     for (let i = 0; i < tabs.length; i++) {
   		tabs[i].style.display = "none";
 	}
     el.querySelector("#stid").style.display = "flex";
-    
+}
+
+function showpanel(panelid) {
     var rpanels = document.getElementsByClassName('rightpanel');
     for (let i = 0; i < rpanels.length; i++) {
   		rpanels[i].style.display = "none";
 	}
     document.getElementById(panelid).style.display = "flex";
+    document.getElementById("ddblock").style.display = "none";
 }
 
+
+
 includeHTML();
+
+function showdd() {
+  var x = document.getElementById("ddblock");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function previous() {
+	
+}
 
 	</script>
     

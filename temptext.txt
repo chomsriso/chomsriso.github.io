@@ -46,6 +46,7 @@ p {
     line-height: 150%;
     margin: 0px;
 }
+
 /* --------- Fiction --------- */
 
 .fiction-container {
@@ -158,6 +159,12 @@ p {
     cursor: pointer;
 }
 
+.fiction-container .chapterdd img {
+	width: 14px;
+    height: 24px;
+    align-self: center;
+}
+
 .fiction-container .chapterdd .ddbody {
 	flex-grow: 1;
     cursor: pointer;
@@ -173,7 +180,7 @@ p {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
     .fiction-container {
 		flex-wrap: wrap;
         min-width: 320px;
@@ -188,10 +195,11 @@ p {
 	}
     
     .fiction-container img {
-	width: 100%;
+	width: 50%;
     height: 307px;
 	object-fit: cover;
     border-radius: 0px;
+    margin: auto;
 	}
     
     h1{
@@ -212,7 +220,7 @@ p {
 	}
     
     .desc p {
-    	padding: 20px;
+    	padding: 20px 100px;
 		font-weight: 400; 
     	color: #828282;
         background-color: #F7F7F7;
@@ -225,29 +233,55 @@ p {
     .fiction-container .chapterdd {
 		display: flex;
 	}
-    
+    .fiction-container .chapterdd > div{
+		padding: 0px 100px;
+    }
+    #ddblock p {
+    	padding: 20px 100px;
+	}
     .rightpanel {
 		padding: 20px 0px;
 	}
-    
     .rightpanel p {
-		padding: 0px 20px;
+		padding: 0px 100px;
 	}
 }
 
-@media (min-width: 601px) {
-    
+
+@media (max-width: 768px) {
+    .desc p {
+    	padding: 20px 60px;
+	}
+    .rightpanel p {
+		padding: 0px 60px;
+	}
+    .fiction-container .chapterdd > div{
+		padding: 0px 60px;
+    }
+    #ddblock p {
+    	padding: 20px 60px;
+	}
 }
 
-@media (min-width: 672px) {
+
+@media (max-width: 600px) {
+    .desc p {
+    	padding: 20px;
+	}
+    .rightpanel p {
+		padding: 0px 20px;
+	}
+    .fiction-container .chapterdd > div{
+		padding: 0px 20px;
+    }
+    #ddblock p {
+    	padding: 20px;
+	}
+    .fiction-container img {
+		width: 100%;
+    }
 
 }
-
-@media (min-width: 768px) {
-
-}
-
-
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
@@ -257,7 +291,7 @@ p {
     hr {
     background-color: #383838;
 	}    
-    @media (max-width: 600px) {
+    @media (max-width: 992px) {
     	.desc p {
         	background-color: #292929;
 		}
@@ -265,6 +299,12 @@ p {
         	background-color: #1F1F1F; 
             border-color:#383838;
         }
+    }
+    .fiction-container .chapterdd {
+        background-color: #1F1F1F;
+    }
+    #ddblock p {
+		background-color: #292929;
     }
 }
 
@@ -318,11 +358,9 @@ p {
             </div>
             
             <div class="chapterdd">
-            	<div>&lt;&lt;
-                </div>
+            	<div onclick="previous()"><img src="https://chomsriso.github.io/src/icon_previous.png"></div>
                 <p class="ddbody" onclick="showdd()">Chapter</p>
-                <div>&gt;&gt;
-                </div>
+                <div onclick="next()"><img src="https://chomsriso.github.io/src/icon_previous.png" style="transform:scaleX(-1);"></div>
             </div>
             <div id="ddblock">
             	<p onclick="showpanel('ch1')">1 - Vatah the Wind God</p>
@@ -389,9 +427,34 @@ function showdd() {
 }
 
 function previous() {
-	
+    var rpanels = document.getElementsByClassName('rightpanel');
+    var currentid = ""; 
+    var previousid = "";
+    for (let i = 1; i < rpanels.length ; i++) {
+  		if (rpanels[i].style.display === "flex"){
+        	currentid = "ch" + (1 + i);
+            previousid = "ch" + i;
+        }
+	}
+    document.getElementById(currentid).style.display = "none";
+    document.getElementById(previousid).style.display = "flex";
+    document.getElementById("ddblock").style.display = "none";
 }
 
+function next() {
+    var rpanels = document.getElementsByClassName('rightpanel');
+    var currentid = ""; 
+    var nextid = "";
+    for (let i = 0; i < rpanels.length - 1; i++) {
+  		if (rpanels[i].style.display === "flex"){
+        	currentid = "ch" + (1 + i);
+            nextid = "ch" + (2 + i);
+        }
+	}
+    document.getElementById(currentid).style.display = "none";
+    document.getElementById(nextid).style.display = "flex";
+    document.getElementById("ddblock").style.display = "none";
+}
 	</script>
     
   </body>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The appendChild() Method</h2>
+
+<div id="myList">
+  <div>Tea</div>
+  <div id="thediv">Coffee</div>
+</div>
+
+<p>Click "Append" to append an item to the end of the list:</p>
+
+<button onclick="myFunction()">Append</button>
+
+<script>
+function myFunction() {
+const x = document.getElementById("thediv");
+const y = document.getElementById("myList");
+document.body.appendChild(x);
+document.body.insertBefore(x,y)
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<script src="https://chomsriso.github.io/js/adddiv.js"></script>
+  <head>
+    <link rel="stylesheet" href="https://chomsriso.github.io/css/home.css">
+    <link rel="stylesheet" href="https://chomsriso.github.io/css/fiction.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
+  </head>
+  <body>
+  
+    <div id="navbar">
+		<a href="https://chomsriso.github.io/index.html">CHOM SRISO</a>
+    </div>
+    
+    
+    <div id="baseid" class="fiction-container">
+    	<div id="bk3" class="leftpanel">
+        	<div id="bk1" class="detail">
+            	<img id ="arr1" src="https://chomsriso.github.io/src/img_storiesFromAbove.jpeg">
+                <div id = "bk2" class="desc">
+                	<div id ="arr2"><h1>Stories From Above</h1></div>
+                	<p id="arr3">A collection of flash fiction : gods and their slice of life <br> <br> Meet the unknown gods you've never heard of. Through some of lost scriptures. Their experiences may blow your mind. Their stories may make you questioning your belief.</p>
+				</div>
+            </div>
+            <div class="chapterlist">
+            	<div onclick="select(this); showpanel('ch1'); topFunction();" class="linkbox" id="t1">
+   					<div class="numlist">1</div>
+   					<div class="verline"></div>
+                	<div class="chaptername">Vatah the Wind God</div>
+                    <div id ="stid" class="selectedtab" style="display:flex;"></div>
+                </div>
+   
+				<div onclick="select(this); showpanel('ch2'); topFunction();" class="linkbox" id="t2">
+   					<div class="numlist">2</div>
+   					<div class="verline"></div>
+                	<div class="chaptername">Ratra and Their Night Time</div>
+                    <div id ="stid" class="selectedtab"></div>
+                </div>
+                
+                <div onclick="select(this); showpanel('ch3'); topFunction();" class="linkbox" id="t3">
+   					<div class="numlist">3</div>
+   					<div class="verline"></div>
+                	<div class="chaptername">Nillah the Black Beast</div>
+                    <div id ="stid" class="selectedtab"></div>
+                </div>
+                
+                <div onclick="select(this); showpanel('ch4'); topFunction();" class="linkbox" id="t4">
+   					<div class="numlist">4</div>
+   					<div class="verline"></div>
+                	<div class="chaptername">A Librarian and a Hidden Tree</div>
+                    <div id ="stid" class="selectedtab"></div>
+                </div>
+                
+            </div>
+            
+            <div id ="arr4" class="chapterdd">
+            	<div onclick="previous(); topFunction();"><img src="https://chomsriso.github.io/src/icon_previous.png"></div>
+                <p class="ddbody" onclick="showdd()">Chapter</p>
+                <div onclick="next(); topFunction();"><img src="https://chomsriso.github.io/src/icon_previous.png" style="transform:scaleX(-1);"></div>
+            </div>
+            <div id="ddblock">
+            	<p onclick="showpanel('ch1'); selectbehind(); topFunction();">1 - Vatah the Wind God</p>
+            	<p onclick="showpanel('ch2'); selectbehind(); topFunction();">2 - Ratra and Their Night Time</p>
+            	<p onclick="showpanel('ch3'); selectbehind(); topFunction();">3 - Nillah the Black Beast</p>
+            	<p onclick="showpanel('ch4'); selectbehind(); topFunction();">4 - A Librarian and a Hidden Tree</p>
+            </div>
+    	</div>
+        
+    	<div id="ch1" class="rightpanel" style="display:flex;" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch1.html">
+        </div>
+        
+        <div id="ch2" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch2.html">
+        </div>
+        
+        <div id="ch3" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch3.html">
+        </div>
+        
+        <div id="ch4" class="rightpanel" w3-include-html="https://chomsriso.github.io/fiction/storiesFromAbove/ch4.html">
+        </div>
+    </div>
+
+    
+    <div class="footer-container">
+    	<div>
+        	<a href="https://www.royalroad.com/profile/661326"><img src="https://chomsriso.github.io/src/icon_roy.png"></a>
+        	<a href="https://open.spotify.com/artist/2NzZLAxlrsS9NWAfdgJNh5?si=cS1gjMQITxi-E5rvw8H22g"><img src="https://chomsriso.github.io/src/icon_spt.png"></a>
+        	<a href="https://music.youtube.com/channel/UCytUrRFdRxaXbmTushol8-g"><img src="https://chomsriso.github.io/src/icon_you.png"></a>
+        	<a href="https://www.instagram.com/chomsriso?igsh=MWNiZTdhbTVkZW5taQ%3D%3D&utm_source=qr
+"><img src="https://chomsriso.github.io/src/icon_ins.png"></a>
+        </div>
+        <div class="bodytext">© 2025 Chom Sriso. All rights reserved.</div>
+    </div>
+    
+<script src="https://chomsriso.github.io/js/fictionpage.js"></script>
+    
+  </body>
+</html>

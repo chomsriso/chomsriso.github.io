@@ -187,6 +187,9 @@ p {
 }
 
 @media (max-width: 992px) {
+	p {
+	    font-size: 15px;
+	}
     .fiction-container {
 		flex-wrap: wrap;
         min-width: 320px;
@@ -236,8 +239,6 @@ p {
     
     #arr3 {
     	padding: 20px 100px;
-		font-weight: 400; 
-    	color: #828282;
         background-color: #F7F7F7;
 	}
     

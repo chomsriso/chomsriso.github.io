@@ -1,0 +1,332 @@
+h1 {
+	font-family: Lato, Geneva, sans-serif;
+	font-weight: 400;
+    font-size: 32px;
+    font-style: italic; 
+    margin: 0px;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 20px;
+    line-height: 150%;
+    color: #828282;
+    text-align: center;
+    margin: 0px;
+}
+
+h3 {
+	font-family: Lato, Geneva, sans-serif;
+	font-weight: 400;
+    font-style: italic; 
+	font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    margin: 0px;
+}
+
+hr {
+	width: 240px; 
+	height: 1px;
+    border: none;
+    background-color: #E6E6E6;
+    margin: 20px auto 40px auto;
+}
+
+p {
+	font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 0px;
+}
+
+/* --------- Fiction --------- */
+
+.fiction-container {
+	display: flex;
+	justify-content: center;
+	max-width: 1120px;
+    min-width: 240px;
+    margin: auto;
+    padding: 40px 80px;
+    gap: 0px 30px;
+}
+
+.fiction-container > div {
+	display: flex;
+    flex-direction: column;
+}
+
+.fiction-container .leftpanel {
+    gap: 0px 40px;
+    position: fixed;
+    left: 80px;
+    height: 85vh;
+    overflow: auto;
+	width: 505px;
+}
+
+.fiction-container .rightpanel {
+	display: none;
+	flex-grow: 1;
+	width: 500px;
+    margin: auto auto auto 540px;
+}
+
+#arr1 {
+	width: 171px;
+    align-self: flex-start;
+	object-fit: cover;
+    border-radius: 4px;
+}
+
+.fiction-container .detail {
+	display: flex;
+    gap: 0px 40px;
+}
+
+.fiction-container .desc {
+	display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0px 10px 0px 0px;
+}
+
+#arr3 p {
+	font-weight: 400; 
+    color: #828282;
+}
+
+.fiction-container .chapterlist {
+	display: flex;
+    flex-direction: column;
+    padding: 40px 10px 40px 0px;
+}
+        
+.fiction-container .chapterlist > div {
+	display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.fiction-container .numlist {
+    width: 40px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.fiction-container .verline {
+    width: 20px;
+    height: 24px;
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: #D8D8D8;
+}
+
+.fiction-container .chaptername {
+	flex-grow: 1;
+    font-weight: 300; 
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.linkbox {
+	cursor: pointer;
+}
+
+.fiction-container .selectedtab {
+	width: 20px;
+	height: 100%;
+    display: none;
+    background-color: #FFC34C;
+    border-radius: 0px 6px 6px 0px;
+}
+
+.chapterdd {
+	display: none;
+	background-color: white;
+	justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.chapterdd > div{
+	height: 60px;
+	padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chapterdd img {
+	width: 14px;
+    height: 24px;
+    align-self: center;
+}
+
+.chapterdd .ddbody {
+	flex-grow: 1;
+    cursor: pointer;
+}
+    
+#ddblock {
+	display: none;
+    position: sticky;
+    top: 179px;
+}
+
+#ddblock p {
+	background-color: #F7F7F7;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.footer-container {
+	margin: auto auto auto 620px;
+}
+
+@media (max-width: 992px) {
+    .fiction-container {
+		flex-wrap: wrap;
+        min-width: 320px;
+    	padding: 0px;
+    }
+    
+    .fiction-container > div {
+	width: 100%;
+	}
+    
+    .fiction-container .leftpanel {
+        position: static;
+        left: auto;
+        height: auto;
+        overflow: hidden;
+	}
+
+    .fiction-container .detail {
+		flex-wrap: wrap;
+	}
+    
+    #arr1 {
+        width: 50%;
+        height: 307px;
+        object-fit: cover;
+        border-radius: 0px;
+        display: block;
+        margin: auto;
+	}
+    #arr2 {
+    	display: block;
+    	position: sticky;
+        top: 60px;
+    }
+    h1{
+        padding: 10px 0px;
+    	text-align: center;
+        background-color: white;
+        border-bottom: 1px solid #E6E6E6;
+    }
+    
+    .fiction-container .desc {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+	}
+    
+    #arr3 {
+    	padding: 20px 100px;
+		font-weight: 400; 
+    	color: #828282;
+        background-color: #F7F7F7;
+	}
+    
+    .fiction-container .chapterlist {
+    	display: none;
+	}
+    
+    .chapterdd {
+		display: flex;
+		padding: 0px 80px;
+    	position: sticky;
+        top: 119px;
+        
+	}
+    .chapterdd > div {
+		padding: 0px 20px;
+    }
+    #ddblock p {
+    	padding: 20px 134px;
+	}
+    .fiction-container .rightpanel {
+        margin: 0px;
+		padding: 20px 0px;
+    }
+    .rightpanel p {
+		padding: 0px 100px;
+	}
+    .footer-container {
+        margin: 0px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #arr3 {
+    	padding: 20px 60px;
+	}
+    .rightpanel p {
+		padding: 0px 60px;
+	}
+    .chapterdd {
+		padding: 0px 40px;
+    }
+    #ddblock p {
+    	padding: 20px 94px;
+	}
+}
+
+
+@media (max-width: 600px) {
+    #arr3 {
+    	padding: 20px;
+	}
+    .rightpanel p {
+		padding: 0px 20px;
+	}
+    .chapterdd {
+		padding: 0px;
+    }
+    #ddblock p {
+    	padding: 20px 54px;
+	}
+    #arr1{
+		width: 100%;
+    }
+
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .fiction-container .verline {
+    border-color: #383838;
+	}
+    hr {
+    background-color: #383838;
+	}    
+    @media (max-width: 992px) {
+    	#arr3 {
+        	background-color: #292929;
+		}
+        h1 {
+        	background-color: #1F1F1F; 
+            border-color:#383838;
+        }
+    }
+    .chapterdd {
+        background-color: #1F1F1F;
+    }
+    #ddblock p {
+		background-color: #292929;
+    }
+}

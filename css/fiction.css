@@ -186,7 +186,7 @@ p {
 	margin: auto auto auto 620px;
 }
 
-@media (max-device-width: 992px) {
+@media (max-width: 992px) {
     .fiction-container {
 		flex-wrap: wrap;
         min-width: 320px;
@@ -271,7 +271,7 @@ p {
 }
 
 
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
     #arr3 {
     	padding: 20px 60px;
 	}
@@ -287,7 +287,7 @@ p {
 }
 
 
-@media (max-device-width: 600px) {
+@media (max-width: 600px) {
     #arr3 {
     	padding: 20px;
 	}

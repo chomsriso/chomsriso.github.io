@@ -5,6 +5,40 @@ body {
 	font-family: Sora, Geneva, sans-serif;
 }
 
+h1 {
+	font-family: Lato, Geneva, sans-serif;
+	font-weight: 400;
+    font-size: 32px;
+    font-style: italic; 
+    margin: 0px;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 20px;
+    line-height: 150%;
+    color: #828282;
+    text-align: center;
+    margin: 0px;
+}
+
+h3 {
+	font-family: Lato, Geneva, sans-serif;
+	font-weight: 400;
+    font-style: italic; 
+	font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    margin: 0px;
+}
+
+p {
+	font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 0px;
+}
+
 #navbar {
 	position: sticky;
   	display: flex;

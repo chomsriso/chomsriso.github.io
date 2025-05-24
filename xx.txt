@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="https://chomsriso.github.io/css/deck.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
     <style>
+p {
+	color: #828282;
+}
+
+.deck-container {
+	display: flex;
+	justify-content: center;
+	max-width: 1120px;
+    min-width: 240px;
+    margin: auto;
+}
+
+.deck-container > div {
+	display: flex;
+    flex-direction: column;
+}
+
+.deck-container .leftPanel {
+	padding: 80px 0px 80px 80px;
+    gap: 40px;
+}
+    
 @media (max-width: 600px) {
     .quote-container {
     	font-size: 30px;

@@ -88,7 +88,7 @@ p {
 .fiction-container .desc {
 	display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     padding: 0px 10px 0px 0px;
 }
 

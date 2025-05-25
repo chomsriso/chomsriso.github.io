@@ -31,19 +31,17 @@ p {
 }
 
 .deck-container .rightPanel {
-	width: 620px;
     background-color: lightgrey;
 }
 
 .deck-container .rightPanel .showcase {
     display: flex;
+    width: 100%;
+    height: 100%;
     justify-content: space-between;
-  	align-items: stretch;
 }
 
 .deck-container .rightPanel .showcase .pic {
-	flex-shrink: 1;
-    height: initial;
 	overflow: hidden;
 }
 
@@ -53,8 +51,8 @@ p {
 }
 
 img.deck {
-	height: 100%;
-	object-fit: contain;
+	width: 518px;
+	object-fit: cover;
 }
 
 .deck-container .rightPanel .pag {

@@ -163,11 +163,11 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
     			<div class="arrow" onclick="nextPic()"><img src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);"></div>
     		</div>
             <div class="pag">
-            	<img id="pag01" class="pagitem" onclick="selectPag(this,pic01)" src="https://chomsriso.github.io/src/icon_page_act.svg">
-            	<img id="pag02" class="pagitem" onclick="selectPag(this,pic02)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag03" class="pagitem" onclick="selectPag(this,pic03)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag04" class="pagitem" onclick="selectPag(this,pic04)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag05" class="pagitem" onclick="selectPag(this,pic05)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
+            	<img id="pag1" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_act.svg">
+            	<img id="pag2" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
+            	<img id="pag3" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
+            	<img id="pag4" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
+            	<img id="pag5" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
             </div>
     	</div>
     </div>
@@ -186,114 +186,85 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
 <script>
 // src="https://chomsriso.github.io/js/fictionpage.js"
 
-    const pic01 = "https://chomsriso.github.io/src/img_nw-01.jpg";
-    const pic02 = "https://chomsriso.github.io/src/img_nw-02.png";
-    const pic03 = "https://chomsriso.github.io/src/img_nw-03.png";
-    const pic04 = "https://chomsriso.github.io/src/img_nw-04.png";
-    const pic05 = "https://chomsriso.github.io/src/img_nw-05.png";
-
-function selectPag(el,picid) {
+function selectPag(el) {
 	var pags = document.getElementsByClassName('pagitem');
     for (let i = 0; i < pags.length; i++) {
   		pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
 	}
     
     el.src = "https://chomsriso.github.io/src/icon_page_act.svg";
-	document.getElementById("imgid").src =  picid;
+    
+    let matches = el.id.match(/(\d+)/);
+    let linkStr = "https://chomsriso.github.io/src/img_nw-" + matches[0] + ".png";
+	document.getElementById("imgid").src = linkStr;
 }
 
 function nextPic() {
 	var pags = document.getElementsByClassName('pagitem');
-    var getPagId;
+    var calnum;
     for (let i = 0; i < pags.length; i++) {
     
     	if(pags[i].src == "https://chomsriso.github.io/src/icon_page_act.svg") {
-            getPagId = pags[i].id;
+        	let matches = pags[i].id.match(/(\d+)/);
+            calnum = Number(matches[0])+1;
+    		let linkStr;
             
-        	switch (pags[i].id) {
-            case 'pag01':
-            	document.getElementById("imgid").src = pic02;
-            	break;
-            case 'pag02':
-            	document.getElementById("imgid").src = pic03;
-            	break;
-            case 'pag03':
-            	document.getElementById("imgid").src = pic04;
-            	break;
-            case 'pag04':
-            	document.getElementById("imgid").src = pic05;
-            	break;
-            case 'pag05':
-            	document.getElementById("imgid").src = pic01;
+            if (calnum <= pags.length) {
+                linkStr = "https://chomsriso.github.io/src/img_nw-" + calnum + ".png";
             }
-        
+            else {
+                linkStr = "https://chomsriso.github.io/src/img_nw-" + 1 + ".png";
+            }
+            
+			document.getElementById("imgid").src = linkStr;
+            
         	pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
         }
     }
     
-  	switch (getPagId) {
-      	case 'pag01':
-        	document.getElementById("pag02").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-        break;
-      	case 'pag02':
-        	document.getElementById("pag03").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-        break;
-      	case 'pag03':
-        	document.getElementById("pag04").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-        break;
-      	case 'pag04':
-        	document.getElementById("pag05").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-        break;
-      	case 'pag05':
-        	document.getElementById("pag01").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-	}
+    let theId;
+    if (calnum <= pags.length) {
+    	theId = "pag" + calnum ;
+    }
+    else {
+    	theId = "pag" + 1 ;
+    }
+    
+  	document.getElementById(theId).src = "https://chomsriso.github.io/src/icon_page_act.svg";
 }
 
 function previousPic() {
 	var pags = document.getElementsByClassName('pagitem');
-    var getPagId;
+    var calnum;
     for (let i = 0; i < pags.length; i++) {
     
     	if(pags[i].src == "https://chomsriso.github.io/src/icon_page_act.svg") {
-            getPagId = pags[i].id;
+        	let matches = pags[i].id.match(/(\d+)/);
+            calnum = Number(matches[0])-1;
+    		let linkStr;
             
-        	switch (pags[i].id) {
-            case 'pag01':
-            	document.getElementById("imgid").src = pic05;
-            	break;
-            case 'pag02':
-            	document.getElementById("imgid").src = pic01;
-            	break;
-            case 'pag03':
-            	document.getElementById("imgid").src = pic02;
-            	break;
-            case 'pag04':
-            	document.getElementById("imgid").src = pic03;
-            	break;
-            case 'pag05':
-            	document.getElementById("imgid").src = pic04;
+            if (calnum > 0) {
+                linkStr = "https://chomsriso.github.io/src/img_nw-" + calnum + ".png";
             }
-        
+            else {
+                linkStr = "https://chomsriso.github.io/src/img_nw-" + pags.length + ".png";
+            }
+            
+			document.getElementById("imgid").src = linkStr;
+            
         	pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
         }
     }
     
-  	switch (getPagId) {
-      	case 'pag01':
-        	document.getElementById("pag05").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-        break;
-      	case 'pag02':
-        	document.getElementById("pag01").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-        break;
-      	case 'pag03':
-        	document.getElementById("pag02").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-        break;
-      	case 'pag04':
-        	document.getElementById("pag03").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-        break;
-      	case 'pag05':
-        	document.getElementById("pag04").src = "https://chomsriso.github.io/src/icon_page_act.svg";
-	}
+    let theId;
+    if (calnum > 0) {
+    	theId = "pag" + calnum ;
+    }
+    else {
+    	theId = "pag" + pags.length ;
+    }
+    
+  	document.getElementById(theId).src = "https://chomsriso.github.io/src/icon_page_act.svg";
 }
 
 </script>

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
-<script></script>
   <head>
 	  <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://chomsriso.github.io/css/home.css">
-    <link rel="stylesheet" href="https://chomsriso.github.io/css/deck.css">
+    
+<!--
+<link rel="stylesheet" href="https://chomsriso.github.io/css/deck.css">
+-->
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
     <style>
 p {
@@ -54,7 +57,6 @@ p {
 
 img.deck {
 	width: 100%;
-	height: 100%;
 	object-fit: cover;
 }
 
@@ -111,16 +113,18 @@ div.qsign {
 .deck-container .rightPanel .showcase .arrow {
 	display: none;
 }
+.deck-container .rightPanel .showcase .pic {
+	padding: 0px 20px;
+}
 }
 
 @media (prefers-color-scheme: dark) {
 
 .deck-container .leftPanel .disButton {
-    	background-color: #262626;
+    	background-color: #333333;
 }
 
-}
-
+}    
     </style>
   </head>
   <body>
@@ -156,11 +160,11 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
     	</div>
     	<div class="rightPanel">
     		<div class="showcase">
-    			<div class="arrow" onclick="previousPic()"><img src="https://chomsriso.github.io/src/icon_nextPic.svg"></div>
+    			<div class="arrow" onclick="previousPic()"><img class="arrowImg" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);"></div>
                 <div class="pic">
     				<img id="imgid" class="deck" src="https://chomsriso.github.io/src/img_nw-01.jpg">
     			</div>
-    			<div class="arrow" onclick="nextPic()"><img src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);"></div>
+    			<div class="arrow" onclick="nextPic()"><img class="arrowImg" src="https://chomsriso.github.io/src/icon_nextPic.svg"></div>
     		</div>
             <div class="pag">
             	<img id="pag1" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_act.svg">
@@ -184,7 +188,7 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
     </div>
     
 <script>
-// src="https://chomsriso.github.io/js/fictionpage.js"
+// src="https://chomsriso.github.io/js/deckpage.js">
 
 function selectPag(el) {
 	var pags = document.getElementsByClassName('pagitem');
@@ -266,6 +270,98 @@ function previousPic() {
     
   	document.getElementById(theId).src = "https://chomsriso.github.io/src/icon_page_act.svg";
 }
+
+function setColorScheme(scheme) {
+	var arrows = document.getElementsByClassName('arrowImg');
+  switch(scheme){
+    case 'dark':
+      for (let i = 0; i < arrows.length; i++) {
+        	arrows[i].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
+        }
+      break;
+    case 'light':
+      for (let i = 0; i < arrows.length; i++) {
+        	arrows[i].src = "https://chomsriso.github.io/src/icon_nextPic.svg";
+        }    
+  }
+}
+
+function getPreferredColorScheme() {
+  if (window.matchMedia) {
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      return 'dark';
+    } else {
+      return 'light';
+    }
+  }
+  return 'light';
+}
+
+function updateColorScheme(){
+    setColorScheme(getPreferredColorScheme());
+}
+
+if(window.matchMedia){
+  var colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  colorSchemeQuery.addEventListener('change', updateColorScheme);
+}
+
+updateColorScheme();
+
+
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+if (isMobile) {
+	const element = document.getElementById('imgid');
+	element.addEventListener('touchstart', handleTouchStart, false);        
+	element.addEventListener('touchmove', handleTouchMove, false);
+
+	var xDown = null;                                                        
+	var yDown = null;
+}
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+                                                                         
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+}                                                
+                                                                         
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+                                                                         
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            /* right swipe */ 
+            previousPic();
+        } else {
+            /* left swipe */
+            nextPic();
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+            /* down swipe */ 
+        } else { 
+            /* up swipe */
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+}
+    
+
 
 </script>
     

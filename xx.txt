@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
     <style>
+#navbar {z-index:1}
 
 p {
 	color: #828282;
@@ -31,25 +32,53 @@ p {
     flex-direction: column;
 }
 
-.deck-container .leftPanel {
+.leftPanel {
 	width: 500px;
 	padding: 80px 0px 80px 80px;
     gap: 40px;
+    flex-shrink: 1.5;
 }
 
-.deck-container .rightPanel {
+.disButton {
+	align-self: flex-start;
+	padding: 12px 24px;
+    border-radius: 8px;
+    background-color: #E6E6E6;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    color: #828282;
+}
+
+.rightPanel {
 	width: 620px;
     justify-content: center;
+    flex-shrink: 1;
 }
 
-.deck-container .rightPanel .showcase {
+.showcase {
 	position: relative;
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 	background-color: grey;
 }
 
+.pag {
+	display: flex;
+	justify-content: center;
+    padding: 10px;
+    gap: 8px;
+}
 
 .mySlides {display: none}
+
+img.deck {
+    height: 417px;
+	object-fit: cover;
+    margin: 0 0 -5px 0;
+}
 
 .prev, .next {
   cursor: pointer;
@@ -58,9 +87,8 @@ p {
   margin-top: -56px;
   padding: 17px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 3px 0 0 3px;
   user-select: none;
-    z-index: 0;
 }
 
 .next {
@@ -69,7 +97,7 @@ p {
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.3);
 }
 
 .dot {
@@ -101,77 +129,41 @@ p {
   to {opacity: 1}
 }
 
-.deck-container .rightPanel .showcase .pic {
-}
-
-.deck-container .rightPanel .showcase .arrow {
-	padding: 17px;
-    align-self: center;
-    cursor: pointer;
-}
-
-img.deck {
-	width: 100%;
-	object-fit: cover;
-    vertical-align: middle;
-}
-
-.deck-container .rightPanel .pag {
-	display: flex;
-	justify-content: center;
-    padding: 10px;
-    gap: 8px;
-}
-
-img.pagitem {
-	cursor: pointer;
-}
-
-.deck-container .leftPanel .disButton {
-	align-self: flex-start;
-	padding: 12px 24px;
-    border-radius: 8px;
-    background-color: #E6E6E6;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 150%;
-    color: #828282;
-}
-
 @media (max-width: 768px) {
+
 .deck-container {
 	flex-wrap: wrap;
     justify-content: center;
 }
-.deck-container .leftPanel {
+
+.leftPanel {
 	order: 2;
     width: 518px;
     padding: 40px 51px;
 }
-.deck-container .rightPanel {
+
+.rightPanel {
 	order: 1;
 }
+
 }
     
 @media (max-width: 600px) {
+
 .quote-container {
 	height: 100%;
     font-size: 30px;
     padding: 40px 0px;
 }
+
 div.qsign {
 	width: auto; 
 }
-.deck-container .leftPanel {
+
+.leftPanel {
     padding: 40px 20px;
 }
-.deck-container .rightPanel .showcase .arrow {
-	display: none;
-}
-.deck-container .rightPanel .showcase .pic {
-	padding: 0px 20px;
-}
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -215,21 +207,21 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
 			<div class="disButton">COMING SOON</div>
     	</div>
     	<div class="rightPanel">
-    		<div class="showcase">
+    		<div id="swipeArea" class="showcase">
             	<div class="mySlides fade">
-  					<img src="https://chomsriso.github.io/src/img_nw-01.jpg">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-01.jpg">
 				</div>
                 <div class="mySlides fade">
-  					<img src="https://chomsriso.github.io/src/img_nw-02.png">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-02.png">
 				</div>
                 <div class="mySlides fade">
-  					<img src="https://chomsriso.github.io/src/img_nw-03.png">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-03.png">
 				</div>
                 <div class="mySlides fade">
-  					<img src="https://chomsriso.github.io/src/img_nw-04.png">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-04.png">
 				</div>
                 <div class="mySlides fade">
-  					<img src="https://chomsriso.github.io/src/img_nw-05.png">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-05.png">
 				</div>
                 
                 <img class="prev" onclick="plusSlides(-1)" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);">
@@ -260,100 +252,18 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
 <script>
 // src="https://chomsriso.github.io/js/deckpage.js">
 
-function selectPag(el) {
-	var pags = document.getElementsByClassName('pagitem');
-    for (let i = 0; i < pags.length; i++) {
-  		pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
-	}
-    
-    el.src = "https://chomsriso.github.io/src/icon_page_act.svg";
-    
-    let matches = el.id.match(/(\d+)/);
-    let linkStr = "https://chomsriso.github.io/src/img_nw-" + matches[0] + ".png";
-	document.getElementById("imgid").src = linkStr;
-}
-
-function nextPic() {
-	var pags = document.getElementsByClassName('pagitem');
-    var calnum;
-    for (let i = 0; i < pags.length; i++) {
-    
-    	if(pags[i].src == "https://chomsriso.github.io/src/icon_page_act.svg") {
-        	let matches = pags[i].id.match(/(\d+)/);
-            calnum = Number(matches[0])+1;
-    		let linkStr;
-            
-            if (calnum <= pags.length) {
-                linkStr = "https://chomsriso.github.io/src/img_nw-" + calnum + ".png";
-            }
-            else {
-                linkStr = "https://chomsriso.github.io/src/img_nw-" + 1 + ".png";
-            }
-            
-			document.getElementById("imgid").src = linkStr;
-            
-        	pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
-        }
-    }
-    
-    let theId;
-    if (calnum <= pags.length) {
-    	theId = "pag" + calnum ;
-    }
-    else {
-    	theId = "pag" + 1 ;
-    }
-    
-  	document.getElementById(theId).src = "https://chomsriso.github.io/src/icon_page_act.svg";
-}
-
-function previousPic() {
-	var pags = document.getElementsByClassName('pagitem');
-    var calnum;
-    for (let i = 0; i < pags.length; i++) {
-    
-    	if(pags[i].src == "https://chomsriso.github.io/src/icon_page_act.svg") {
-        	let matches = pags[i].id.match(/(\d+)/);
-            calnum = Number(matches[0])-1;
-    		let linkStr;
-            
-            if (calnum > 0) {
-                linkStr = "https://chomsriso.github.io/src/img_nw-" + calnum + ".png";
-            }
-            else {
-                linkStr = "https://chomsriso.github.io/src/img_nw-" + pags.length + ".png";
-            }
-            
-			document.getElementById("imgid").src = linkStr;
-            
-        	pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
-        }
-    }
-    
-    let theId;
-    if (calnum > 0) {
-    	theId = "pag" + calnum ;
-    }
-    else {
-    	theId = "pag" + pags.length ;
-    }
-    
-  	document.getElementById(theId).src = "https://chomsriso.github.io/src/icon_page_act.svg";
-}
-
 function setColorScheme(scheme) {
-	var arrows = document.getElementsByClassName('arrowImg');
-  switch(scheme){
-    case 'dark':
-      for (let i = 0; i < arrows.length; i++) {
-        	arrows[i].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
-        }
-      break;
-    case 'light':
-      for (let i = 0; i < arrows.length; i++) {
-        	arrows[i].src = "https://chomsriso.github.io/src/icon_nextPic.svg";
-        }    
-  }
+	var next = document.getElementsByClassName('next');
+	var prev = document.getElementsByClassName('prev');
+	switch(scheme){
+    	case 'dark':
+			next.src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
+			prev.src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
+      		break;
+    	case 'light':
+        	next.src = "https://chomsriso.github.io/src/icon_nextPic.svg";
+        	prev.src = "https://chomsriso.github.io/src/icon_nextPic.svg";
+  	}
 }
 
 function getPreferredColorScheme() {
@@ -381,7 +291,7 @@ updateColorScheme();
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
-	const element = document.getElementById('imgid');
+	const element = document.getElementById('swipeArea');
 	element.addEventListener('touchstart', handleTouchStart, false);        
 	element.addEventListener('touchmove', handleTouchMove, false);
 

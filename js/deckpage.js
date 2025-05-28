@@ -116,14 +116,16 @@ if(window.matchMedia){
 
 updateColorScheme();
 
-function swipeit(element) {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      element.addEventListener('touchstart', handleTouchStart, false);        
-element.addEventListener('touchmove', handleTouchMove, false);
 
-var xDown = null;                                                        
-var yDown = null;
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+if (isMobile) {
+	const element = document.getElementById('imgid');
+	element.addEventListener('touchstart', handleTouchStart, false);        
+	element.addEventListener('touchmove', handleTouchMove, false);
+
+	var xDown = null;                                                        
+	var yDown = null;
+}
 
 function getTouches(evt) {
   return evt.touches ||             // browser API
@@ -134,7 +136,7 @@ function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;                                      
-};                                                
+}                                                
                                                                          
 function handleTouchMove(evt) {
     if ( ! xDown || ! yDown ) {
@@ -165,6 +167,6 @@ function handleTouchMove(evt) {
     /* reset values */
     xDown = null;
     yDown = null;                                             
-};
-    }
 }
+    
+

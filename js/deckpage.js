@@ -116,11 +116,11 @@ if(window.matchMedia){
 
 updateColorScheme();
 
-function swipethis() {
+function swipeit(element) {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-      document.addEventListener('touchstart', handleTouchStart, false);        
-document.addEventListener('touchmove', handleTouchMove, false);
+      element.addEventListener('touchstart', handleTouchStart, false);        
+element.addEventListener('touchmove', handleTouchMove, false);
 
 var xDown = null;                                                        
 var yDown = null;

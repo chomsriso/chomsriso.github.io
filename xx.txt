@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
     <style>
+
 p {
 	color: #828282;
 }
@@ -42,8 +43,62 @@ p {
 }
 
 .deck-container .rightPanel .showcase {
-    display: flex;
-    justify-content: center;
+	position: relative;
+    z-index: -1;
+	background-color: grey;
+}
+
+
+.mySlides {display: none}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -56px;
+  padding: 17px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+    z-index: 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.dot {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  background-color: #E6E6E6;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #FFC34C;
+}
+
+.dot:hover {
+  background-color: #FFDD99;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
 .deck-container .rightPanel .showcase .pic {
@@ -58,6 +113,7 @@ p {
 img.deck {
 	width: 100%;
 	object-fit: cover;
+    vertical-align: middle;
 }
 
 .deck-container .rightPanel .pag {
@@ -160,18 +216,32 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
     	</div>
     	<div class="rightPanel">
     		<div class="showcase">
-    			<div class="arrow" onclick="previousPic()"><img class="arrowImg" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);"></div>
-                <div class="pic">
-    				<img id="imgid" class="deck" src="https://chomsriso.github.io/src/img_nw-01.jpg">
-    			</div>
-    			<div class="arrow" onclick="nextPic()"><img class="arrowImg" src="https://chomsriso.github.io/src/icon_nextPic.svg"></div>
+            	<div class="mySlides fade">
+  					<img src="https://chomsriso.github.io/src/img_nw-01.jpg">
+				</div>
+                <div class="mySlides fade">
+  					<img src="https://chomsriso.github.io/src/img_nw-02.png">
+				</div>
+                <div class="mySlides fade">
+  					<img src="https://chomsriso.github.io/src/img_nw-03.png">
+				</div>
+                <div class="mySlides fade">
+  					<img src="https://chomsriso.github.io/src/img_nw-04.png">
+				</div>
+                <div class="mySlides fade">
+  					<img src="https://chomsriso.github.io/src/img_nw-05.png">
+				</div>
+                
+                <img class="prev" onclick="plusSlides(-1)" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);">
+				<img class="next" onclick="plusSlides(1)" src="https://chomsriso.github.io/src/icon_nextPic.svg">
+                
     		</div>
             <div class="pag">
-            	<img id="pag1" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_act.svg">
-            	<img id="pag2" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag3" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag4" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag5" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
+  <div class="dot" onclick="currentSlide(1)"></div> 
+  <div class="dot" onclick="currentSlide(2)"></div> 
+  <div class="dot" onclick="currentSlide(3)"></div> 
+  <div class="dot" onclick="currentSlide(4)"></div> 
+  <div class="dot" onclick="currentSlide(5)"></div> 
             </div>
     	</div>
     </div>
@@ -361,7 +431,32 @@ function handleTouchMove(evt) {
     yDown = null;                                             
 }
     
+let slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
 
 </script>
     

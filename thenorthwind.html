@@ -3,7 +3,7 @@
   <head>
 	  <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://chomsriso.github.io/css/home.css">
-    <link rel="stylesheet" href="https://chomsriso.github.io/css/deck.css">
+	<link rel="stylesheet" href="https://chomsriso.github.io/css/deck.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
   </head>
   <body>
@@ -38,19 +38,33 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
 			<div class="disButton">COMING SOON</div>
     	</div>
     	<div class="rightPanel">
-    		<div class="showcase">
-    			<div class="arrow" onclick="previousPic()"><img class="arrowImg" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);"></div>
-                <div class="pic">
-    				<img id="imgid" class="deck" src="https://chomsriso.github.io/src/img_nw-01.jpg">
-    			</div>
-    			<div class="arrow" onclick="nextPic()"><img class="arrowImg" src="https://chomsriso.github.io/src/icon_nextPic.svg"></div>
+    		<div id="swipeArea" class="showcase">
+            	<div class="mySlides">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-01.jpg">
+				</div>
+                <div class="mySlides">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-02.png">
+				</div>
+                <div class="mySlides">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-03.png">
+				</div>
+                <div class="mySlides">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-04.png">
+				</div>
+                <div class="mySlides">
+  					<img class="deck" src="https://chomsriso.github.io/src/img_nw-05.png">
+				</div>
+                
+                <img class="prev" onclick="plusSlides(-1)" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);">
+				<img class="next" onclick="plusSlides(1)" src="https://chomsriso.github.io/src/icon_nextPic.svg">
+                
     		</div>
             <div class="pag">
-            	<img id="pag1" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_act.svg">
-            	<img id="pag2" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag3" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag4" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
-            	<img id="pag5" class="pagitem" onclick="selectPag(this)" src="https://chomsriso.github.io/src/icon_page_dis.svg">
+  <div class="dot" onclick="currentSlide(1)"></div> 
+  <div class="dot" onclick="currentSlide(2)"></div> 
+  <div class="dot" onclick="currentSlide(3)"></div> 
+  <div class="dot" onclick="currentSlide(4)"></div> 
+  <div class="dot" onclick="currentSlide(5)"></div> 
             </div>
     	</div>
     </div>
@@ -66,7 +80,8 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
         <div class="bodytext">© 2025 Chom Sriso. All rights reserved.</div>
     </div>
     
-<script src="https://chomsriso.github.io/js/deckpage.js"></script>
+<script src="https://chomsriso.github.io/js/deckpage.js">
+</script>
     
   </body>
 </html>

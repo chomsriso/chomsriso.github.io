@@ -1,97 +1,16 @@
-function selectPag(el) {
-	var pags = document.getElementsByClassName('pagitem');
-    for (let i = 0; i < pags.length; i++) {
-  		pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
-	}
-    
-    el.src = "https://chomsriso.github.io/src/icon_page_act.svg";
-    
-    let matches = el.id.match(/(\d+)/);
-    let linkStr = "https://chomsriso.github.io/src/img_nw-" + matches[0] + ".png";
-	document.getElementById("imgid").src = linkStr;
-}
-
-function nextPic() {
-	var pags = document.getElementsByClassName('pagitem');
-    var calnum;
-    for (let i = 0; i < pags.length; i++) {
-    
-    	if(pags[i].src == "https://chomsriso.github.io/src/icon_page_act.svg") {
-        	let matches = pags[i].id.match(/(\d+)/);
-            calnum = Number(matches[0])+1;
-    		let linkStr;
-            
-            if (calnum <= pags.length) {
-                linkStr = "https://chomsriso.github.io/src/img_nw-" + calnum + ".png";
-            }
-            else {
-                linkStr = "https://chomsriso.github.io/src/img_nw-" + 1 + ".png";
-            }
-            
-			document.getElementById("imgid").src = linkStr;
-            
-        	pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
-        }
-    }
-    
-    let theId;
-    if (calnum <= pags.length) {
-    	theId = "pag" + calnum ;
-    }
-    else {
-    	theId = "pag" + 1 ;
-    }
-    
-  	document.getElementById(theId).src = "https://chomsriso.github.io/src/icon_page_act.svg";
-}
-
-function previousPic() {
-	var pags = document.getElementsByClassName('pagitem');
-    var calnum;
-    for (let i = 0; i < pags.length; i++) {
-    
-    	if(pags[i].src == "https://chomsriso.github.io/src/icon_page_act.svg") {
-        	let matches = pags[i].id.match(/(\d+)/);
-            calnum = Number(matches[0])-1;
-    		let linkStr;
-            
-            if (calnum > 0) {
-                linkStr = "https://chomsriso.github.io/src/img_nw-" + calnum + ".png";
-            }
-            else {
-                linkStr = "https://chomsriso.github.io/src/img_nw-" + pags.length + ".png";
-            }
-            
-			document.getElementById("imgid").src = linkStr;
-            
-        	pags[i].src = "https://chomsriso.github.io/src/icon_page_dis.svg";
-        }
-    }
-    
-    let theId;
-    if (calnum > 0) {
-    	theId = "pag" + calnum ;
-    }
-    else {
-    	theId = "pag" + pags.length ;
-    }
-    
-  	document.getElementById(theId).src = "https://chomsriso.github.io/src/icon_page_act.svg";
-}
 
 function setColorScheme(scheme) {
-	var arrows = document.getElementsByClassName('arrowImg');
-  switch(scheme){
-    case 'dark':
-      for (let i = 0; i < arrows.length; i++) {
-        	arrows[i].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
-        }
-      break;
-    case 'light':
-      for (let i = 0; i < arrows.length; i++) {
-        	arrows[i].src = "https://chomsriso.github.io/src/icon_nextPic.svg";
-        }    
-  }
+	var next = document.getElementsByClassName('next');
+	var prev = document.getElementsByClassName('prev');
+	switch(scheme){
+    	case 'dark':
+			next[0].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
+			prev[0].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
+      		break;
+    	case 'light':
+        	next.src = "https://chomsriso.github.io/src/icon_nextPic.svg";
+        	prev.src = "https://chomsriso.github.io/src/icon_nextPic.svg";
+  	}
 }
 
 function getPreferredColorScheme() {
@@ -119,7 +38,7 @@ updateColorScheme();
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
-	const element = document.getElementById('imgid');
+	const element = document.getElementById('swipeArea');
 	element.addEventListener('touchstart', handleTouchStart, false);        
 	element.addEventListener('touchmove', handleTouchMove, false);
 
@@ -152,10 +71,10 @@ function handleTouchMove(evt) {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
             /* right swipe */ 
-            previousPic();
+            plusSlides(-1);
         } else {
             /* left swipe */
-            nextPic();
+            plusSlides(1);
         }                       
     } else {
         if ( yDiff > 0 ) {
@@ -169,4 +88,29 @@ function handleTouchMove(evt) {
     yDown = null;                                             
 }
     
+let slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}

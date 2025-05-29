@@ -3,176 +3,35 @@
   <head>
 	  <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://chomsriso.github.io/css/home.css">
-    
-<!--
-<link rel="stylesheet" href="https://chomsriso.github.io/css/deck.css">
--->
-
+	<link rel="stylesheet" href="https://chomsriso.github.io/css/deck.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
     <style>
-#navbar {z-index:1}
-
-p {
-	color: #828282;
-}
-
-.quote-container {
-    min-width: 320px;
-}
-
-.deck-container {
-	display: flex;
-	max-width: 1200px;
-    min-width: 320px;
-    margin: auto;
-}
-
-.deck-container > div {
-	display: flex;
-    flex-direction: column;
-}
-
-.leftPanel {
-	width: 500px;
-	padding: 80px 0px 80px 80px;
-    gap: 40px;
-    flex-shrink: 1.5;
-}
-
-.disButton {
-	align-self: flex-start;
-	padding: 12px 24px;
-    border-radius: 8px;
-    background-color: #E6E6E6;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 150%;
-    color: #828282;
-}
-
 .rightPanel {
-	width: 620px;
-    justify-content: center;
-    flex-shrink: 1;
+	position: relative;
 }
 
 .showcase {
-	position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-	background-color: grey;
-}
-
-.pag {
+	position: static;
 	display: flex;
-	justify-content: center;
-    padding: 10px;
-    gap: 8px;
+    overflow: auto;
+    
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
 }
 
-.mySlides {display: none}
+.showcase::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
 
-img.deck {
-    height: 417px;
-	object-fit: cover;
-    margin: 0 0 -5px 0;
+.slideItem {
+	flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
 }
 
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  margin-top: -56px;
-  padding: 17px;
-  transition: 0.6s ease;
-  border-radius: 3px 0 0 3px;
-  user-select: none;
+  margin-top: -55px;
 }
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.3);
-}
-
-.dot {
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
-  background-color: #E6E6E6;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #FFC34C;
-}
-
-.dot:hover {
-  background-color: #FFDD99;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@media (max-width: 768px) {
-
-.deck-container {
-	flex-wrap: wrap;
-    justify-content: center;
-}
-
-.leftPanel {
-	order: 2;
-    width: 518px;
-    padding: 40px 51px;
-}
-
-.rightPanel {
-	order: 1;
-}
-
-}
-    
-@media (max-width: 600px) {
-
-.quote-container {
-	height: 100%;
-    font-size: 30px;
-    padding: 40px 0px;
-}
-
-div.qsign {
-	width: auto; 
-}
-
-.leftPanel {
-    padding: 40px 20px;
-}
-
-}
-
-@media (prefers-color-scheme: dark) {
-
-.deck-container .leftPanel .disButton {
-    	background-color: #333333;
-}
-
-}    
     </style>
   </head>
   <body>
@@ -208,24 +67,21 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
     	</div>
     	<div class="rightPanel">
     		<div id="swipeArea" class="showcase">
-            	<div class="mySlides fade">
+            	<div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-01.jpg">
 				</div>
-                <div class="mySlides fade">
+                <div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-02.png">
 				</div>
-                <div class="mySlides fade">
+                <div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-03.png">
 				</div>
-                <div class="mySlides fade">
+                <div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-04.png">
 				</div>
-                <div class="mySlides fade">
+                <div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-05.png">
 				</div>
-                
-                <img class="prev" onclick="plusSlides(-1)" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);">
-				<img class="next" onclick="plusSlides(1)" src="https://chomsriso.github.io/src/icon_nextPic.svg">
                 
     		</div>
             <div class="pag">
@@ -235,6 +91,10 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
   <div class="dot" onclick="currentSlide(4)"></div> 
   <div class="dot" onclick="currentSlide(5)"></div> 
             </div>
+            
+                <img class="prev" onclick="plusSlides(-1)" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);">
+				<img class="next" onclick="plusSlides(1)" src="https://chomsriso.github.io/src/icon_nextPic.svg">
+                
     	</div>
     </div>
     
@@ -249,125 +109,7 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
         <div class="bodytext">© 2025 Chom Sriso. All rights reserved.</div>
     </div>
     
-<script>
-// src="https://chomsriso.github.io/js/deckpage.js">
-
-function setColorScheme(scheme) {
-	var next = document.getElementsByClassName('next');
-	var prev = document.getElementsByClassName('prev');
-	switch(scheme){
-    	case 'dark':
-			next.src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
-			prev.src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
-      		break;
-    	case 'light':
-        	next.src = "https://chomsriso.github.io/src/icon_nextPic.svg";
-        	prev.src = "https://chomsriso.github.io/src/icon_nextPic.svg";
-  	}
-}
-
-function getPreferredColorScheme() {
-  if (window.matchMedia) {
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-      return 'dark';
-    } else {
-      return 'light';
-    }
-  }
-  return 'light';
-}
-
-function updateColorScheme(){
-    setColorScheme(getPreferredColorScheme());
-}
-
-if(window.matchMedia){
-  var colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  colorSchemeQuery.addEventListener('change', updateColorScheme);
-}
-
-updateColorScheme();
-
-
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-if (isMobile) {
-	const element = document.getElementById('swipeArea');
-	element.addEventListener('touchstart', handleTouchStart, false);        
-	element.addEventListener('touchmove', handleTouchMove, false);
-
-	var xDown = null;                                                        
-	var yDown = null;
-}
-
-function getTouches(evt) {
-  return evt.touches ||             // browser API
-         evt.originalEvent.touches; // jQuery
-}                                                     
-                                                                         
-function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];                                      
-    xDown = firstTouch.clientX;                                      
-    yDown = firstTouch.clientY;                                      
-}                                                
-                                                                         
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-    }
-
-    var xUp = evt.touches[0].clientX;                                    
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-                                                                         
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
-            /* right swipe */ 
-            previousPic();
-        } else {
-            /* left swipe */
-            nextPic();
-        }                       
-    } else {
-        if ( yDiff > 0 ) {
-            /* down swipe */ 
-        } else { 
-            /* up swipe */
-        }                                                                 
-    }
-    /* reset values */
-    xDown = null;
-    yDown = null;                                             
-}
-    
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-
+<script src="https://chomsriso.github.io/js/deckpage.js">
 </script>
     
   </body>

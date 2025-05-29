@@ -4,12 +4,13 @@ function setColorScheme(scheme) {
 	var prev = document.getElementsByClassName('prev');
 	switch(scheme){
     	case 'dark':
-			next[0].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
-			prev[0].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
+		next[0].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
+		prev[0].src = "https://chomsriso.github.io/src/icon_nextPic-dark.svg";
       		break;
     	case 'light':
         	next.src = "https://chomsriso.github.io/src/icon_nextPic.svg";
         	prev.src = "https://chomsriso.github.io/src/icon_nextPic.svg";
+      		break;
   	}
 }
 

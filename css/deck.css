@@ -166,9 +166,11 @@ div.qsign {
 .leftPanel {
     padding: 40px 20px;
 }
+	
 .prev, .next {
 	display: none;
 }
+	
 }
 
 @media (prefers-color-scheme: dark) {

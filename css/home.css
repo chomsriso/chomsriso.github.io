@@ -5,6 +5,11 @@ body {
 	font-family: Sora, Geneva, sans-serif;
 }
 
+.showcase-container a {
+    	text-decoration: none;
+        color: inherit;
+    }
+
 h1 {
 	font-family: Lato, Geneva, sans-serif;
 	font-weight: 400;

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
   </head>
   <body>
-  
+	  
     <div id="navbar">
 		<a href="https://chomsriso.github.io/index.html">CHOM SRISO</a>
     </div>
@@ -38,25 +38,22 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
 			<div class="disButton">COMING SOON</div>
     	</div>
     	<div class="rightPanel">
-    		<div id="swipeArea" class="showcase">
-            	<div class="mySlides">
+    		<div id="swipeArea" class="showcase" onscroll="getWhere(this)">
+            	<div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-01.jpg">
 				</div>
-                <div class="mySlides">
+                <div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-02.png">
 				</div>
-                <div class="mySlides">
+                <div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-03.png">
 				</div>
-                <div class="mySlides">
+                <div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-04.png">
 				</div>
-                <div class="mySlides">
+                <div class="slideItem">
   					<img class="deck" src="https://chomsriso.github.io/src/img_nw-05.png">
 				</div>
-                
-                <img class="prev" onclick="plusSlides(-1)" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);">
-				<img class="next" onclick="plusSlides(1)" src="https://chomsriso.github.io/src/icon_nextPic.svg">
                 
     		</div>
             <div class="pag">
@@ -66,6 +63,10 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
   <div class="dot" onclick="currentSlide(4)"></div> 
   <div class="dot" onclick="currentSlide(5)"></div> 
             </div>
+            
+                <img class="prev" onclick="plusSlides(-1)" src="https://chomsriso.github.io/src/icon_nextPic.svg" style="transform:scaleX(-1);">
+				<img class="next" onclick="plusSlides(1)" src="https://chomsriso.github.io/src/icon_nextPic.svg">
+                
     	</div>
     </div>
     
@@ -79,7 +80,7 @@ Combination of Western Oracle Cards and Chinese Fortune Sticks.<br><br>
         </div>
         <div class="bodytext">© 2025 Chom Sriso. All rights reserved.</div>
     </div>
-    
+     
 <script src="https://chomsriso.github.io/js/deckpage.js">
 </script>
     

@@ -41,15 +41,24 @@ p {
 }
 
 .rightPanel {
+	position: relative;
 	width: 620px;
-    justify-content: center;
-    flex-shrink: 1;
+    	justify-content: center;
+    	flex-shrink: 1;
 }
 
 .showcase {
-	position: relative;
-    width: 100%;
-    overflow: hidden;
+	width: 100%;
+	display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.showcase::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .pag {
@@ -59,7 +68,12 @@ p {
     gap: 8px;
 }
 
-.mySlides {display: none}
+.slideItem {
+	flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    scroll-snap-align: center;
+}
 
 img.deck {
 	width: 100%;
@@ -72,7 +86,7 @@ img.deck {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  margin-top: -28px;
+  margin-top: -55px;
   padding: 10px;
   transition: 0.6s ease;
   border-radius: 3px 0 0 3px;

@@ -98,10 +98,6 @@ img.deck {
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.3);
-}
-
 .dot {
   cursor: pointer;
   height: 16px;
@@ -116,8 +112,13 @@ img.deck {
   background-color: #FFC34C;
 }
 
+@media (pointer: fine){
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.3);
+}
 .dot:hover {
   background-color: #FFDD99;
+}
 }
 
 /* Fading animation */

@@ -333,15 +333,15 @@ img.avatar{
     
     .showcase-container {
       	padding: 0px 0px 0px 20px;
-    	gap: 32px 11px;
+    	gap: 32px 10px;
     }
     
     .showcase-container > div > div > div {
-	width: 171px;
+	width: 161px;
     }
     
     .showcase-container > div > div {
-        gap: 11px;
+        gap: 10px;
     }
     
     .journal-container .margin {

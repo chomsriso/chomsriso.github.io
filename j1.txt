@@ -3,55 +3,155 @@
   <head>
 	  <meta name=viewport content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://chomsriso.github.io/css/home.css">
+	<link rel="stylesheet" href="https://chomsriso.github.io/css/deck.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sora:300,400,600">
 	  <title>Chom Sriso</title>
 	  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-	<style>
-.page-container {
-	margin: 40px auto;
-    padding: 0px 80px;
-    max-width: 1040px;
-    min-width: 160px;
-	display: flex;
-    flex-direction: column;
-    gap: 20px;
+		<style>
+        
+#navbar {z-index:1}
+
+h1 {
+	padding: 40px 80px;
+    min-width: 320px;
 }
 
-
-img {
-	width: auto;
-    object-fit: cover;
+p {
+	color: #353535;
 }
-    </style>
+
+.rightPanel {
+	flex-grow: 1;
+}
+
+.titleover {
+  padding: 10px 20px;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  text-align: center;
+  color: white;
+  box-sizing:border-box;
+}
+
+.desctext {
+  padding: 10px 20px;
+  text-align: center;
+  color: #828282;
+  background-color: #F7F7F7;
+}
+
+img.deck {
+    aspect-ratio: 1.78;
+}
+
+.content {
+	padding: 40px 80px;
+	max-width: 1200px;
+    min-width: 320px;
+    margin: auto;
+  	box-sizing:border-box;
+}
+
+@media (pointer: fine){
+.prev:hover, .next:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+}
+
+@media (max-width: 768px) {
+
+h1 {
+    padding: 40px 40px;
+}
+
+.content {
+	padding: 40px 40px;
+}
+
+}
+    
+@media (max-width: 600px) {
+
+h1 {
+    padding: 20px 20px;
+}
+
+.content {
+	padding: 20px 20px;
+}
+
+img.deck {
+    aspect-ratio: 1.48;
+}
+
+}
+        </style>
   </head>
   <body>
-  
     <div id="navbar">
 		<a href="https://chomsriso.github.io/index.html">CHOM SRISO</a>
     </div>
     
-    <div class="page-container">
-    <h1><center>Where is Mount Olympus?</center></h1>
-    <img src="https://chomsriso.github.io/src/image_mm-01.png">
-    <img src="https://chomsriso.github.io/src/image_mm-02.png" style="width:50%">
-    <img src="https://chomsriso.github.io/src/image_mm-03.png" style="width:50%">
+    <h1>
+            		Where is Mount Olympus?
+            	</h1>
+    <div class="deck-container">
+    	<div class="rightPanel">
+    		<div id="swipeArea" class="showcase" onscroll="getWhere(this)">
+            	
+            	<div class="slideItem">
+  					<img class="deck" src="https://chomsriso.github.io/src/image_mm-01.png">
+				</div>
+                <div class="slideItem">
+  					<img class="deck" src="https://chomsriso.github.io/src/image_mm-02.png">
+				</div>
+                <div class="slideItem">
+  					<img class="deck" src="https://chomsriso.github.io/src/image_mm-03.png">
+				</div>
+                
+    		</div>
+            <p class="desctext">
+            	My best guess: Southern sky, base around Earth’s orbit, center in the sun, and peak pointing down.
+            </p>
+            <div class="pag">
+  <div class="dot" onclick="currentSlide(1)"></div> 
+  <div class="dot" onclick="currentSlide(2)"></div> 
+  <div class="dot" onclick="currentSlide(3)"></div> 
+            </div>
+            
+            <img class="prev" onclick="plusSlides(-1)" src="https://chomsriso.github.io/src/icon_nextPic-dark.svg" style="transform:scaleX(-1);">
+			<img class="next" onclick="plusSlides(1)" src="https://chomsriso.github.io/src/icon_nextPic-dark.svg">
+        </div>
+    </div>
     
-    </div>  
+    <p class="content">
+    Of course, we all know Mount Olympus is in Greece. But where does the name really come from? It was named after a cosmic mountain in Greek mythology— stories of gods and their realms. And this isn’t the only belief system that mentions a cosmic mountain, the one said to lie at the center of the universe. Many belief systems in both the east and the west include this mountain in their cosmologies. Whether it’s called Olympus, Himinbjörg, or Meru, it often represents the same concept. That’s because many of these myths likely share a common origin.
+<br><br>
+But the term “universe” is used to refer to everything beyond us in the sky, so the mountain might be imagined as the only one, in the size of a galaxy. And a “cosmic model” could be the whole universe, including all galaxies. However, some schools of thought see it as just one system among millions of similar ones. With that perspective, we can go further—and explore new ideas using what we know from modern astronomy.
+<br><br>
+If we compare this type of cosmic model to a solar system, then its center would be the sun, and that would be the core of the mountain. But how big is this mountain supposed to be? Some say there are a few small mountains beneath it. So if we think of them as planets, the base of the mountain probably wouldn’t extend beyond the inner solar system. Its height would also likely match the radius of its base, since celestial objects are generally spherical, and this mountain might resemble half of one.
+<br><br>
+One last question: which direction does it point—toward the northern or southern sky? My theory isn’t based on mythology, but on an ancient ritual that’s still practiced today. It’s the way people circle around something sacred or important in a clockwise direction. Especially when they do it around something like a mound, it looks like the mountain is there and that's how things usually move around it. They believe this is the right direction, and that’s how our Earth and other planets orbit the sun when viewed from the southern sky. 
+
+    </p>
     
     <div class="footer-container">
     	<div>
-        	<a href="https://www.royalroad.com/profile/661326" target="_blank"><img src="https://chomsriso.github.io/src/icon_roy.png"></a>
-        	<a href="https://open.spotify.com/artist/2NzZLAxlrsS9NWAfdgJNh5?si=cS1gjMQITxi-E5rvw8H22g" target="_blank"><img src="https://chomsriso.github.io/src/icon_spt.png"></a>
-        	<a href="https://music.youtube.com/channel/UCytUrRFdRxaXbmTushol8-g" target="_blank"><img src="https://chomsriso.github.io/src/icon_you.png"></a>
+        	<a href="https://www.royalroad.com/profile/661326" target="_blank"><img src="https://chomsriso.github.io/src/icon_roy.svg"></a>
+        	<a href="https://open.spotify.com/artist/2NzZLAxlrsS9NWAfdgJNh5?si=cS1gjMQITxi-E5rvw8H22g" target="_blank"><img src="https://chomsriso.github.io/src/icon_spt.svg"></a>
+        	<a href="https://music.youtube.com/channel/UCytUrRFdRxaXbmTushol8-g" target="_blank"><img src="https://chomsriso.github.io/src/icon_you.svg"></a>
         	<a href="https://www.instagram.com/chomsriso?igsh=MWNiZTdhbTVkZW5taQ%3D%3D&utm_source=qr
-" target="_blank"><img src="https://chomsriso.github.io/src/icon_ins.png"></a>
+" target="_blank"><img src="https://chomsriso.github.io/src/icon_ins.svg"></a>
         </div>
         <div class="bodytext">© 2025 Chom Sriso. All rights reserved.</div>
     </div>
-    
+     
+<script src="https://chomsriso.github.io/js/Gallery.js">
+</script>
     
   </body>
 </html>

@@ -1,0 +1,78 @@
+        
+#navbar {z-index:1}
+
+h1 {
+	padding: 40px 80px;
+    min-width: 320px;
+}
+
+p {
+	color: #353535;
+}
+
+.rightPanel {
+	flex-grow: 1;
+}
+
+.titleover {
+  padding: 10px 20px;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  text-align: center;
+  color: white;
+  box-sizing:border-box;
+}
+
+.desctext {
+  padding: 10px 20px;
+  text-align: center;
+  color: #828282;
+  background-color: #F7F7F7;
+}
+
+img.deck {
+    aspect-ratio: 1.78;
+}
+
+.content {
+	padding: 40px 80px;
+	max-width: 1200px;
+    min-width: 320px;
+    margin: auto;
+  	box-sizing:border-box;
+}
+
+@media (pointer: fine){
+.prev:hover, .next:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+}
+
+@media (max-width: 768px) {
+
+h1 {
+    padding: 40px 40px;
+}
+
+.content {
+	padding: 40px 40px;
+}
+
+}
+    
+@media (max-width: 600px) {
+
+h1 {
+    padding: 20px 20px;
+}
+
+.content {
+	padding: 20px 20px;
+}
+
+img.deck {
+    aspect-ratio: 1.48;
+}
+
+}

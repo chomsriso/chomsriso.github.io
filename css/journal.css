@@ -1,17 +1,12 @@
         
 #navbar {z-index:1}
 
-h1 {
-	padding: 40px 80px;
-    max-width: 1200px;
-    min-width: 320px;
-    margin: auto;
-    text-align: center;
-	box-sizing:border-box;
-}
-
 p {
 	color: #353535;
+}
+
+.center {
+    text-align: center;
 }
 
 .rightPanel {
@@ -35,6 +30,12 @@ img.deck {
     min-width: 320px;
     margin: auto;
   	box-sizing:border-box;
+}
+
+img.insert {
+	height: 300px;
+    width: auto;
+    display: inline-block;
 }
 
 @media (pointer: fine){

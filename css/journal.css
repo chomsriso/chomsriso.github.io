@@ -3,7 +3,10 @@
 
 h1 {
 	padding: 40px 80px;
+    max-width: 1200px;
     min-width: 320px;
+    margin: auto;
+	box-sizing:border-box;
 }
 
 p {
@@ -75,4 +78,11 @@ img.deck {
     aspect-ratio: 1.48;
 }
 
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    p {
+        color: #C9C9C9;
+    }
 }

@@ -21,6 +21,18 @@ p {
     flex-direction: column;
 }
 
+.table-container {
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+	max-width: 1200px;
+    min-width: 320px;
+    margin: auto;
+	background-color: #F7F7F7;
+	gap: 20px;
+	padding: 40px 0px;
+}
+
 .leftPanel {
 	width: 500px;
 	padding: 80px 0px 80px 80px;
@@ -92,10 +104,6 @@ img.deck {
     aspect-ratio: 1.48;
 	object-fit: cover;
     margin: 0 0 -5px 0;
-}
-
-.about-container {
-	flex-direction: column;
 }
 
 img.draw {

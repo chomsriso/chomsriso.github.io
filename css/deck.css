@@ -46,7 +46,7 @@ p {
     border-radius: 8px;
     background-color: #000000;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 300;
     font-size: 16px;
     line-height: 150%;
 	align-self: center;
@@ -216,8 +216,8 @@ div.qsign {
 }
 	
 .onButton {
-    background-color: #F7F7F7;
-    color: #000000;
+    background-color: #ffffff;
+    color: #FFC34C;
 }
 	
 } 

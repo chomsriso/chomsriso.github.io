@@ -2,7 +2,7 @@ function randomCard(){
 	let card  = document.getElementById("thecard");
     	let randnum = Math.floor(Math.random() * 42);
     
-    	card.src = "https://chomsriso.github.io/src/NW-deck-h500/PNG-" + randnum.toString() + ".png";
+    	card.src = "https://chomsriso.github.io/src/NW-deck/PNG-" + randnum.toString() + ".png";
     	card.addEventListener('load', () => {
 	  	// Perform actions after the image has loaded
 	  	card.style.animation = 'none';

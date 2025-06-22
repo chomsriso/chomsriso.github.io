@@ -28,6 +28,18 @@ p {
     flex-shrink: 1.5;
 }
 
+.onButton {
+	align-self: flex-start;
+	padding: 12px 24px;
+    border-radius: 8px;
+    background-color: #000000;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    color: #ffffff;
+}
+
 .disButton {
 	align-self: flex-start;
 	padding: 12px 24px;

@@ -94,6 +94,12 @@ img.deck {
     margin: 0 0 -5px 0;
 }
 
+img.draw {
+	height: 500px;
+	width: auto;
+	object-fit: cover;
+}
+
 .prev, .next {
   cursor: pointer;
   position: absolute;

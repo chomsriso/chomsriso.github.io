@@ -94,6 +94,10 @@ img.deck {
     margin: 0 0 -5px 0;
 }
 
+.about-container {
+	flex-direction: column;
+}
+
 img.draw {
 	height: 500px;
 	width: auto;

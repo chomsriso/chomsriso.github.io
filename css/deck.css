@@ -210,5 +210,14 @@ div.qsign {
 .deck-container .leftPanel .disButton {
     	background-color: #333333;
 }
-
+	
+.table-container {
+	background-color: #292929;
+}
+	
+.onButton {
+    background-color: #ffffff;
+    color: #000000;
+}
+	
 } 

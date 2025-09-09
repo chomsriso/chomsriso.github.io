@@ -35,8 +35,8 @@ p {
 
 .leftPanel {
 	width: 500px;
-	padding: 40px 20px 40px 80px;
-    gap: 20px;
+	padding: 40px 20px 60px 80px;
+    gap: 40px;
     flex-shrink: 1.5;
 }
 

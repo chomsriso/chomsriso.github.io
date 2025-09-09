@@ -11,6 +11,7 @@ p {
 
 .deck-container {
 	display: flex;
+	align-items: flex-start;
 	max-width: 1200px;
     min-width: 320px;
     margin: auto;
@@ -34,7 +35,7 @@ p {
 
 .leftPanel {
 	width: 500px;
-	padding: 80px 0px 80px 80px;
+	padding: 80px 20px 80px 80px;
     gap: 40px;
     flex-shrink: 1.5;
 }

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+	<loc>https://chomsriso.github.io/</loc>
+	<lastmod>2025-09-17T17:41:39+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_storiesFromAbove.jpeg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_yourGood.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_northWind.jpeg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_journal.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/avatar-160.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_roy.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_spt.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_you.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_ins.svg</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://chomsriso.github.io/fiction</loc>
+	<lastmod>2025-09-17T17:41:39+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_previous.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_dropdown.svg</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://chomsriso.github.io/journal-01</loc>
+	<lastmod>2025-09-17T17:41:39+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/image_mm-01.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/image_mm-02.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/image_mm-03.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_mm-04.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_mm-05.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_mm-06.jpg</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://chomsriso.github.io/music</loc>
+	<lastmod>2025-09-17T17:41:39+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/logo_youtubemusic-144.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_roy.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_spt.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_you.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_ins.png</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://chomsriso.github.io/thenorthwind</loc>
+	<lastmod>2025-09-17T17:41:39+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_nw-01.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_nw-02.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_nw-03.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_nw-04.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/img_nw-05.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/icon_nextPic.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://chomsriso.github.io/src/NW-deck/PNG-Ins1.png</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://chomsriso.github.io/index</loc>
+	<lastmod>2025-09-17T17:41:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://chomsriso.github.io/index.html</loc>
+	<lastmod>2025-09-17T17:41:41+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+</urlset>
